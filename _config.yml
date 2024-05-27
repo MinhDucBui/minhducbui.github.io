@@ -21,7 +21,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Minh Duc Bui"
   pronouns         : # example: "she/her"  
   bio              : "I'm a PhD student at the Johannes Gutenberg University Mainz (Germany), advised by Katharina von der Wense (neé Kann). My research focuses on analyzing and developing techniques for efficiency, fairness and their intersection in NLP models."
