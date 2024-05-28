@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi, my name is **Minh Duc Bui**, but you can call me Duc! I'm a PhD student at JGU Mainz, advised by **Katharina von der Wense (nèe Kann)**. My research focuses on analyzing and developing techniques for **resource efficiency, fairness** and their **intersection in NLP models**. 
+Hi, my name is **Minh Duc Bui**, but you can call me Duc! I'm a PhD student at JGU Mainz, advised by **Katharina von der Wense** (nèe Kann). My research focuses on analyzing and developing techniques for **resource efficiency, fairness** and their **intersection in NLP models**. 
 
 Prior to this, I completed my bachelor's degree in "Mathematics in Business and Economics", and subsequently pursued a master's degree in "Data Science" with a strong emphasis on NLP at the University of Mannheim (supervised by Goran Glavaš). Following the completion of my master's degree, I transitioned into the industry, where I worked as a data scientist in the autonomous driving field in Stuttgart for some time.
 
@@ -30,5 +30,5 @@ News
 ---
 
 **September 2023**
-> Beginning my PhD at JGU Mainz under the supervision of Prof. Dr. [Katharina von der Wense](https://nala-cub.github.io) (Née Kann)!
+> Beginning my PhD at the [NALA Group](https://nala-cub.github.io) hosted by JGU and University of Colorado Boulder under the supervision of Prof. Dr. [Katharina von der Wense](https://scholar.google.de/citations?user=3XF5bqEAAAAJ&hl=en) (Née Kann)!
 
