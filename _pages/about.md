@@ -15,7 +15,7 @@ News
 ======
 
 **May 2024**
-> Starting my Visiting PhD program at the Universität Hamburg in the research group led by Prof. Dr. Anne Lauscher for the next 4 months!
+> Starting my Visiting PhD program at the Universität Hamburg in the research group led by Prof. Dr. [Anne Lauscher](https://anne-lauscher.de) for the next 4 months!
 
 ---
 
@@ -30,5 +30,5 @@ News
 ---
 
 **September 2023**
-> Beginning my PhD at JGU Mainz under the supervision of Prof. Dr. Katharina von der Wense (Née Kann)!
+> Beginning my PhD at JGU Mainz under the supervision of Prof. Dr. [Katharina von der Wense](https://nala-cub.github.io) (Née Kann)!
 
