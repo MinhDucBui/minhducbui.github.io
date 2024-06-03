@@ -14,13 +14,14 @@ Prior to this, I completed my bachelor's degree in "Mathematics in Business and 
 News
 ======
 
-**May 2024**
-> Starting my Visiting PhD program at the Universität Hamburg in the research group led by Prof. Dr. [Anne Lauscher](https://anne-lauscher.de) for the next 4 months!
+
+> **May 2024.** Starting my Visiting PhD program at the Universität Hamburg in the research group led by Prof. Dr. [Anne Lauscher](https://anne-lauscher.de) for the next 4 months!
 
 ---
 
-**April 2024**
-> Our Paper "[Knowledge Distillation vs. Pretraining from Scratch under a Fixed (Computation) Budget](https://arxiv.org/abs/2404.19319)" was accepted to the 5th Workshop on Insights from Negative Results in NLP @ NAACL 2024!
+
+> **April 2024**. 
+Our Paper "[Knowledge Distillation vs. Pretraining from Scratch under a Fixed (Computation) Budget](https://arxiv.org/abs/2404.19319)" was accepted to the 5th Workshop on Insights from Negative Results in NLP @ NAACL 2024!
 
 ---
 
