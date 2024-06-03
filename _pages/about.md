@@ -16,10 +16,16 @@ News
 
 
 > **May 2024**<br> Starting my Visiting PhD program at the Universität Hamburg in the research group led by Prof. Dr. [Anne Lauscher](https://anne-lauscher.de) for the next 4 months!
+
 ---
+
 > **April 2024**<br> Our Paper "[Knowledge Distillation vs. Pretraining from Scratch under a Fixed (Computation) Budget](https://arxiv.org/abs/2404.19319)" was accepted to the 5th Workshop on Insights from Negative Results in NLP @ NAACL 2024!
+
 ---
+
 > **April 2024**<br> Our Paper "[The Trade-off between Performance, Efficiency, and Fairness in Adapter Modules for Text Classification](https://arxiv.org/abs/2405.02010)" was accepted to  4th Workshop on Trustworthy Natural Language Processing (TrustNLP) @ NAACL 2024!
+
 ---
+
 > **September 2023**<br>Beginning my PhD at the [NALA Group](https://nala-cub.github.io) hosted by JGU and University of Colorado Boulder under the supervision of Prof. Dr. [Katharina von der Wense](https://scholar.google.de/citations?user=3XF5bqEAAAAJ&hl=en) (Née Kann)!
 
