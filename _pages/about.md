@@ -27,7 +27,7 @@ News
 
 ---
 
-> **April 2024**<br><br>We got 2nd place on the Shared Task of AmericasNLP 2024 @ NAACL! See our system description paper "[JGU Mainz’s Submission to the AmericasNLP 2024 Shared Task on the Creation of Educational Materials for Indigenous Languages](https://aclanthology.org/2024.americasnlp-1.23/)"!
+> **April 2024**<br><br>We achieved 2nd place in the Shared Task of AmericasNLP 2024 at NAACL! Check out our system description paper "[JGU Mainz’s Submission to the AmericasNLP 2024 Shared Task on the Creation of Educational Materials for Indigenous Languages](https://aclanthology.org/2024.americasnlp-1.23/)"!
 
 ---
 
