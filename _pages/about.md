@@ -15,7 +15,11 @@ News
 ======
 
 
-> **May 2024**<br><br>Starting my Visiting PhD program at the Universität Hamburg in the research group led by Prof. Dr. [Anne Lauscher](https://anne-lauscher.de) for the next 4 months!
+> **October 2024**<br><br>Finished my research visit: Check out our work on multimodal, multilingual and multicultural hate speech: [Preprint](https://arxiv.org/abs/2411.03888)!
+
+---
+
+> **May 2024**<br><br>Starting my research visit at the University of Hamburg in the research group led by Prof. Dr. [Anne Lauscher](https://anne-lauscher.de) for the next 4 months!
 
 ---
 
