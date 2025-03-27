@@ -31,12 +31,12 @@ News
 ---
 
 ### **April 2024**  
-📄 Our paper, "[Knowledge Distillation vs. Pretraining from Scratch under a Fixed (Computation) Budget](https://aclanthology.org/2024.insights-1.6/)," was accepted to the **5th Workshop on Insights from Negative Results in NLP @ NAACL 2024**!  
+📄 Our paper, [Knowledge Distillation vs. Pretraining from Scratch under a Fixed (Computation) Budget](https://aclanthology.org/2024.insights-1.6/), was accepted to the **5th Workshop on Insights from Negative Results in NLP @ NAACL 2024**!  
 
-📄 Another paper, "[The Trade-off between Performance, Efficiency, and Fairness in Adapter Modules for Text Classification](https://aclanthology.org/2024.trustnlp-1.4/)," was accepted to the **4th Workshop on Trustworthy Natural Language Processing (TrustNLP) @ NAACL 2024**!  
+📄 Another paper, [The Trade-off between Performance, Efficiency, and Fairness in Adapter Modules for Text Classification](https://aclanthology.org/2024.trustnlp-1.4/), was accepted to the **4th Workshop on Trustworthy Natural Language Processing (TrustNLP) @ NAACL 2024**!  
 
 🥈 We achieved **2nd place** in the Shared Task of AmericasNLP 2024 at NAACL! 🎉 Check out our system description paper:  
-"[JGU Mainz’s Submission to the AmericasNLP 2024 Shared Task on the Creation of Educational Materials for Indigenous Languages](https://aclanthology.org/2024.americasnlp-1.23/)".  
+[JGU Mainz’s Submission to the AmericasNLP 2024 Shared Task on the Creation of Educational Materials for Indigenous Languages](https://aclanthology.org/2024.americasnlp-1.23/).  
 
 ---
 
