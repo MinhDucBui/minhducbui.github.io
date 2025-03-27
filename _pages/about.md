@@ -15,6 +15,12 @@ News
 ======
 
 
+> **January 2025**<br><br>Our paper, [Multi³Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models](https://arxiv.org/abs/2411.03888), has been accepted to **NAACL 2025 (Main)**! See you in Albuquerque, New Mexico!
+
+
+---
+
+
 > **October 2024**<br><br>Finished my research visit: Check out our work on multimodal, multilingual and multicultural hate speech: [Preprint](https://arxiv.org/abs/2411.03888)!
 
 ---
