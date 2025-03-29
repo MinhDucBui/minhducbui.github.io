@@ -21,7 +21,21 @@ author_profile: true
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </h2>
       <p class="publication-meta">
-        {% if post.authors %}{{ post.authors | join: ', ' }}{% endif %}
+        {% if post.authors %}
+          {% assign bold_name = "Minh Duc Bui" %}
+          {% assign formatted_authors = "" %}
+
+          {% for author in post.authors %}
+            {% if author == bold_name %}
+              {% assign formatted_authors = formatted_authors | append: "<strong>" | append: author | append: "</strong>, " %}
+            {% else %}
+              {% assign formatted_authors = formatted_authors | append: author | append: ", " %}
+            {% endif %}
+          {% endfor %}
+
+          {{ formatted_authors | strip_newlines | remove: ", " }}
+        {% endif %}
+
         {% if post.conference %} • Presented at {{ post.conference }}{% endif %}
         {% if post.date %} • {{ post.date | date: "%B %Y" }}{% endif %}
       </p>
