@@ -4,7 +4,8 @@ collection: publications
 permalink: /publication/2024-04-30-kd-vs-scratch
 excerpt: ''
 date: 2024-04-30
-venue: '5th Workshop on Insights from Negative Results in NLP'
+authors: Minh Duc Bui, Fabian David Schmidt, Goran Glavaš, Katharina von der Wense
+conference: '5th Workshop on Insights from Negative Results in NLP @NAACL 2024'
 paperurl: 'https://aclanthology.org/2024.insights-1.6/'
 ---
 

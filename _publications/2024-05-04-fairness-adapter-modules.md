@@ -3,7 +3,8 @@ title: "The Trade-off between Performance, Efficiency, and Fairness in Adapter M
 collection: publications
 permalink: /publication/2024-05-04-fairness-adapter-modules
 excerpt: ''
-venue: '4th Workshop on Trustworthy Natural Language Processing (TrustNLP) at NAACL'
+authors: Minh Duc Bui, Katharina von der Wense
+conference: '4th Workshop on Trustworthy Natural Language Processing (TrustNLP) @NAACL 2024'
 paperurl: 'https://aclanthology.org/2024.trustnlp-1.4/'
 ---
 
