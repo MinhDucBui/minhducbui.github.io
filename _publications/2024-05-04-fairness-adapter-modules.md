@@ -2,7 +2,7 @@
 title: "The Trade-off between Performance, Efficiency, and Fairness in Adapter Modules for Text Classification"
 collection: publications
 permalink: /publication/2024-05-04-fairness-adapter-modules
-excerpt: 'Current natural language processing (NLP) research tends to focus on only one or, less frequently, two dimensions - e.g., performance, privacy, fairness, or efficiency - at a time, which may lead to suboptimal conclusions and often overlooking the broader goal of achieving trustworthy NLP. Work on adapter modules focuses on improving performance and efficiency, with no investigation of unintended consequences on other aspects such as fairness. To address this gap, we conduct experiments on three text classification datasets by either (1) finetuning all parameters or (2) using adapter modules. [...]'
+excerpt: ''
 venue: '4th Workshop on Trustworthy Natural Language Processing (TrustNLP) at NAACL'
 paperurl: 'https://aclanthology.org/2024.trustnlp-1.4/'
 ---

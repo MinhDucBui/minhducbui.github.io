@@ -2,7 +2,7 @@
 title: "Knowledge Distillation vs. Pretraining from Scratch under a Fixed (Computation) Budget"
 collection: publications
 permalink: /publication/2024-04-30-kd-vs-scratch
-excerpt: 'Compared to standard language model (LM) pretraining (i.e., from scratch), Knowledge Distillation (KD) entails an additional forward pass through a teacher model that is typically substantially larger than the target student model. As such, KD in LM pretraining materially slows down throughput of pretraining instances vis-a-vis pretraining from scratch. Scaling laws of LM pretraining suggest that smaller models can close the gap to larger counterparts if trained on more data (i.e., processing more tokens)-and under a fixed computation budget, smaller models are able be process more data than larger models. We thus hypothesize that KD might, in fact, be suboptimal to pretraining from scratch for obtaining smaller LMs, when appropriately accounting for the compute budget. [...]'
+excerpt: ''
 date: 2024-04-30
 venue: '5th Workshop on Insights from Negative Results in NLP'
 paperurl: 'https://aclanthology.org/2024.insights-1.6/'
