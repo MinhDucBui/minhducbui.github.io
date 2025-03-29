@@ -13,9 +13,6 @@ author_profile: true
 
 {% for post in site.publications reversed %}
   {% include archive-single.md %}
-  
-  {% unless forloop.last %}
   ---
-  {% endunless %}
 {% endfor %}
 
