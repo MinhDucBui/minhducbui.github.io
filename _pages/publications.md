@@ -24,16 +24,20 @@ author_profile: true
         {% if post.authors %}
           {% assign bold_name = "Minh Duc Bui" %}
           {% assign formatted_authors = "" %}
+          {% assign author_count = post.authors.size %}
 
           {% for author in post.authors %}
             {% if author == bold_name %}
-              {% assign formatted_authors = formatted_authors | append: "<strong>" | append: author | append: "</strong>, " %}
+              {% assign formatted_authors = formatted_authors | append: "<strong>" | append: author | append: "</strong>" %}
             {% else %}
-              {% assign formatted_authors = formatted_authors | append: author | append: ", " %}
+              {% assign formatted_authors = formatted_authors | append: author %}
+            {% endif %}
+            {% if forloop.index != author_count %}
+              {% assign formatted_authors = formatted_authors | append: ", " %}
             {% endif %}
           {% endfor %}
 
-          {{ formatted_authors | strip_newlines | remove: ", " }}
+          {{ formatted_authors | strip_newlines }}
         {% endif %}
 
         {% if post.conference %} • Presented at {{ post.conference }}{% endif %}
