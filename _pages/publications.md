@@ -12,7 +12,6 @@ author_profile: true
 {% include base_path %}
 
 ---
-
 <div class="publications-list">
   {% for post in site.publications reversed %}
   <article class="archive-item">
