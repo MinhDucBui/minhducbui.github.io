@@ -40,7 +40,7 @@ author_profile: true
           {{ formatted_authors | strip_newlines }}
         {% endif %}
 
-        {% if post.conference %} • <strong>Presented at {{ post.conference }}</strong>{% endif %}
+        {% if post.conference %} • <strong>{{ post.conference }}</strong>{% endif %}
         {% if post.date %} • {{ post.date | date: "%B %Y" }}{% endif %}
       </p>
     </header>
