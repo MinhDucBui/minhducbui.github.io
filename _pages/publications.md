@@ -12,15 +12,14 @@ author_profile: true
 {% include base_path %}
 
 ---
-
 <div class="publications-list">
   {% for post in site.publications reversed %}
   <article class="archive-item">
-    <header>
-      <h2 style="font-size: 14px;">
+    <header style="margin-bottom: 0;">
+      <h2 style="font-size: 14px; display: inline;">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </h2>
-      <p class="publication-meta" style="font-family: Arial, sans-serif; font-size: 12px; color: #555;">
+      <p class="publication-meta" style="font-family: Arial, sans-serif; font-size: 12px; color: #555; display: inline; margin-left: 10px;">
         {% if post.authors %}
           {% assign bold_name = "Minh Duc Bui" %}
           {% assign formatted_authors = "" %}
@@ -52,4 +51,5 @@ author_profile: true
   </article>
   {% endfor %}
 </div>
+
 
