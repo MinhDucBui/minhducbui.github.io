@@ -16,7 +16,7 @@ News
 ## 📰 News
 
 ### **May 2025**  
-🏆 We're thrilled to share that our paper, [Multi³Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models](https://aclanthology.org/2025.naacl-long.490/), has received the Outstanding Paper Award at NAACL 2025!
+🏆 We're thrilled to share that our paper, [Multi³Hate](https://aclanthology.org/2025.naacl-long.490/), has received the **Outstanding Paper Award** at NAACL 2025!
 
 ### **January 2025**  
 📢 Our paper, [Multi³Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models](https://aclanthology.org/2025.naacl-long.490/), has been accepted to **NAACL 2025 (Main)**! See you in Albuquerque, New Mexico! 🎉  

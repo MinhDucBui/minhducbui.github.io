@@ -17,7 +17,7 @@ author_profile: true
   {% for post in site.publications reversed %}
   <article class="archive-item">
     <header>
-      <h2>
+      <h2 style="font-size: 14px;">  <!-- Adjust the font size as needed -->
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </h2>
       <p class="publication-meta">
@@ -52,3 +52,4 @@ author_profile: true
   </article>
   {% endfor %}
 </div>
+
