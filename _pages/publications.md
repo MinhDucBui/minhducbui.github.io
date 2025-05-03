@@ -17,10 +17,10 @@ author_profile: true
   {% for post in site.publications reversed %}
   <article class="archive-item">
     <header>
-      <h2 style="font-size: 14px;">  <!-- Adjust the font size as needed -->
+      <h2 style="font-size: 14px;">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </h2>
-      <p class="publication-meta">
+      <p class="publication-meta" style="font-family: Arial, sans-serif; font-size: 12px; color: #555;">
         {% if post.authors %}
           {% assign bold_name = "Minh Duc Bui" %}
           {% assign formatted_authors = "" %}
@@ -40,7 +40,7 @@ author_profile: true
           {{ formatted_authors | strip_newlines }}
         {% endif %}
 
-        {% if post.conference %} • Presented at {{ post.conference }}{% endif %}
+        {% if post.conference %} • <strong>Presented at {{ post.conference }}</strong>{% endif %}
         {% if post.date %} • {{ post.date | date: "%B %Y" }}{% endif %}
       </p>
     </header>
