@@ -17,10 +17,10 @@ author_profile: true
   {% for post in site.publications reversed %}
   <article class="archive-item">
     <header>
-      <h2 style="font-size: 14px; margin-bottom: 5px;">  <!-- Reduce margin for less space -->
+      <h2 style="font-size: 14px; margin-bottom: 2px;">  <!-- Reduced margin-bottom even further -->
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </h2>
-      <p class="publication-meta" style="font-family: Arial, sans-serif; font-size: 12px; color: #555;">
+      <p class="publication-meta" style="font-family: Arial, sans-serif; font-size: 12px; color: #555; margin-top: 0;">
         {% if post.authors %}
           {% assign bold_name = "Minh Duc Bui" %}
           {% assign formatted_authors = "" %}
