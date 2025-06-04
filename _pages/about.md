@@ -15,6 +15,11 @@ News
 ======
 ## 📰 News
 
+### **June 2025**
+📢 Our paper, [On Generalization across Measurement Systems: LLMs Entail More
+Test-Time Compute for Underrepresented Cultures](https://arxiv.org/pdf/2506.02591), has been accepted to **ACL 2025 (Main)**! See you in Vienna, Austria 🇦🇹! 🎉  
+
+
 ### **May 2025**  
 🏆 We're thrilled to share that our paper, [Multi³Hate](https://aclanthology.org/2025.naacl-long.490/), has received the **Outstanding Paper Award** at NAACL 2025!
 
