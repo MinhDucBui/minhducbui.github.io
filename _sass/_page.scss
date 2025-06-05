@@ -399,3 +399,14 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+.paper_btn{
+  background-color: rgb(255, 236, 179);
+  border-radius: 3px;
+  padding: 4px 8px;
+  font-size: 11pt;
+  color: #494E52;
+}
+.paper_btn:hover{
+  background-color: #FAE18F;
+}
