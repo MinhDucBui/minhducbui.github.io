@@ -3,7 +3,7 @@
   collection: "publications"
   date: "2025-06-01"
   venue: "ACL (Main) 2025"
-  type: "Conference"
+  type: "Conferences"
   paperurl: "https://www.arxiv.org/pdf/2506.02591"
 
 - title: "Multi3Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models"
@@ -11,7 +11,7 @@
   collection: "publications"
   date: "2024-11-06"
   venue: "NAACL (Main) 2025"
-  type: "Conference"
+  type: "Conferences"
   paperurl: "https://aclanthology.org/2025.naacl-long.490/"
   award: "Outstanding Paper Award"
 
@@ -20,7 +20,7 @@
   collection: "publications"
   date: "2024-05-04"
   venue: "5th Workshop on Insights from Negative Results in NLP @ NAACL 2024"
-  type: "Workshop"
+  type: "Workshops"
   paperurl: "https://aclanthology.org/2024.insights-1.6/"
 
 - title: "The Trade-off between Performance, Efficiency, and Fairness in Adapter Modules for Text Classification"
@@ -28,6 +28,6 @@
   collection: "publications"
   date: "2024-05-04"
   venue: "4th Workshop on Trustworthy Natural Language Processing (TrustNLP) @ NAACL 2024"
-  type: "Workshop"
+  type: "Workshops"
   paperurl: "https://aclanthology.org/2024.trustnlp-1.4/"
 
