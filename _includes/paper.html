@@ -1,0 +1,37 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div>
+    <div style="font-size: 14pt; font-weight: bold;">
+     {{ title }}
+    </div>
+    <div style="font-size:12pt; margin-top: 5px">
+        {{post.authors | replace: "Junyeong Park", "<strong>Junyeong Park</strong>"}}
+    </div>
+    <div style="font-size:12pt">
+        <em>{{post.venue}}</em>
+    </div>
+    {% if post.paperurl or post.arxivurl or post.codeurl or post.dataurl or post.posterurl or post.slideurl %}
+    <div style="margin-top: 5px; margin-bottom: 10px">
+      {% if post.paperurl %}<a href=" {{ post.paperurl }} " target="_blank" class="paper_btn" style="text-decoration:none"><i class="fa fa-file-pdf-o"></i> Paper</a>{% endif %}
+      {% if post.arxivurl %}<a href=" {{ post.arxivurl }} " target="_blank" class="paper_btn" style="text-decoration:none"><img src="../images/arxiv-logomark-small.svg" width="11" style="margin-bottom:1px"/> arXiv</a>{% endif %}
+      {% if post.codeurl %}<a href=" {{ post.codeurl }} " target="_blank" class="paper_btn" style="text-decoration:none"><i class="fab fa-github"></i> Code</a>{% endif %}
+      {% if post.dataurl %}<a href=" {{ post.dataurl }} " target="_blank" class="paper_btn" style="text-decoration:none"><i class="fab fa-github"></i> Data</a>{% endif %}
+      {% if post.posterurl %}<a href=" {{ post.posterurl }} " target="_blank" class="paper_btn" style="text-decoration:none"><i class="fa-regular fa-file"></i> Poster</a>{% endif %}
+      {% if post.homeurl %}<a href=" {{ post.homeurl }} " target="_blank" class="paper_btn" style="text-decoration:none"><i class="fa-solid fa-house"></i> Homepage</a>{% endif %}
+      {% if post.award %}<span class="paper_btn"><i class="fa-solid fa-medal"></i> {{ post.award }}</span>{% endif %}
+    </div>
+    {% endif %}
+</div>
