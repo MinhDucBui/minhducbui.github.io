@@ -18,7 +18,7 @@
 - title: "Knowledge Distillation vs. Pretraining from Scratch under a Fixed (Computation) Budget"
   authors: "Minh Duc Bui, Fabian David Schmidt, Goran Glavaš, Katharina von der Wense"
   collection: "publications"
-  date: "2024-05-04"
+  date: "2024-05-05"
   venue: "5th Workshop on Insights from Negative Results in NLP @ NAACL 2024"
   type: "Workshops"
   paperurl: "https://aclanthology.org/2024.insights-1.6/"
