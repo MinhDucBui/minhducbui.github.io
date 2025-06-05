@@ -28,8 +28,6 @@ Latest News ([See all](/news/))
 
 ---
 
-### **September 2023**  
-🎓 Began my PhD at the [NALA Group](https://nala-cub.github.io), hosted by **JGU** and the **University of Colorado Boulder**, under the supervision of Prof. Dr. [Katharina von der Wense](https://scholar.google.de/citations?user=3XF5bqEAAAAJ&hl=en) (née Kann)! 
 
 Recent Publications ([See all](/publications/))
 ------
