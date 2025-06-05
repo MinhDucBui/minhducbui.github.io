@@ -4,7 +4,7 @@
   date: "2024-11-06"
   venue: "NAACL (Main) 2025"
   type: "Conference"
-  arxivurl: "https://aclanthology.org/2025.naacl-long.490/"
+  paperurl: "https://aclanthology.org/2025.naacl-long.490/"
   award: "Outstanding Paper Award"
 
 - title: "Knowledge Distillation vs. Pretraining from Scratch under a Fixed (Computation) Budget"
