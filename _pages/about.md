@@ -7,9 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-Welcome to my personal homepage! My name is **Minh Duc Bui**, but you can call me Duc. I am a PhD student specializing in Natural Language Processing (NLP) at JGU Mainz, under the supervision of **Katharina von der Wense** (nèe Kann). My research centers on **cross-cultural NLP**, exploring how NLP techniques can be adapted to understand and respect cultural differences. I aim to develop models that are sensitive to cultural nuances, ultimately fostering better global communication and inclusivity in AI applications.
+Hi, My name is **Minh Duc Bui**, but you can call me Duc. I am a PhD student specializing in Natural Language Processing (NLP) at JGU Mainz (Germany), under the supervision of **Katharina von der Wense** (nèe Kann). My research centers on **cross-cultural NLP**, exploring how NLP techniques can be adapted to understand and respect cultural differences. I aim to develop models that are sensitive to cultural nuances, ultimately fostering better global communication and inclusivity in AI applications.
 
-Prior to this, I completed my bachelor's degree in "Mathematics in Business and Economics", and subsequently pursued a master's degree in "Data Science" with a strong emphasis on NLP at the University of Mannheim (supervised by Goran Glavaš). Following the completion of my master's degree, I transitioned into the industry, where I worked as a data scientist in the autonomous driving field in Stuttgart for some time.
 
 News
 ======
@@ -49,4 +48,11 @@ Test-Time Compute for Underrepresented Cultures](https://arxiv.org/pdf/2506.0259
 ---
 
 ### **September 2023**  
-🎓 Began my PhD at the [NALA Group](https://nala-cub.github.io), hosted by **JGU** and the **University of Colorado Boulder**, under the supervision of Prof. Dr. [Katharina von der Wense](https://scholar.google.de/citations?user=3XF5bqEAAAAJ&hl=en) (née Kann)!  
+🎓 Began my PhD at the [NALA Group](https://nala-cub.github.io), hosted by **JGU** and the **University of Colorado Boulder**, under the supervision of Prof. Dr. [Katharina von der Wense](https://scholar.google.de/citations?user=3XF5bqEAAAAJ&hl=en) (née Kann)! 
+
+Recent Publications ([See all](/publications/))
+------
+{% assign reversed_publications = site.data.publications %}
+{% for post in reversed_publications limit:7 %}
+{% include paper.html %}
+{% endfor %}
