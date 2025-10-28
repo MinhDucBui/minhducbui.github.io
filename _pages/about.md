@@ -7,7 +7,18 @@ redirect_from:
   - /about.html
 ---
 
-Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a PhD student in **Natural Language Processing (NLP)** at **Johannes Gutenberg University Mainz (Germany)**, supervised by **Katharina von der Wense (née Kann)**. My current research focuses on **cross-cultural aspects of NLP** and the **broader implications of human interaction with LLMs**. I am particularly interested in how **linguistic** ([EMNLP 2025](https://arxiv.org/abs/2509.13835)), **cultural** ([NAACL 2025](https://aclanthology.org/2025.naacl-long.490/)), and **social** ([ACL 2025](https://aclanthology.org/2025.acl-long.1032/)) differences influence model behavior and how these differences can inadvertently disadvantage certain communities.
+Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a PhD student in **Natural Language Processing (NLP)** at **Johannes Gutenberg University Mainz (Germany)**, supervised by **Katharina von der Wense (née Kann)**.  
+
+My research focuses on the **cross-cultural aspects of LLMs**, examining how they represent and respond to human diversity across three key dimensions:  
+
+- **Linguistic Variation:** how language form and variation (e.g., dialects, syntax, orthography) affect model performance
+   - [Large Language Models Discriminate Against Speakers of German Dialects](https://arxiv.org/abs/2509.13835) at EMNLP 2025  
+- **Cultural Variation:** how cultural context, conventions, and norms shape model interpretation and reasoning
+   - [Multi3Hate](https://aclanthology.org/2025.naacl-long.490/) at NAACL 2025
+   - [On Generalization across Measurement Systems](https://aclanthology.org/2025.acl-long.1032/) at ACL 2025
+- **Socio-demographic Variation:** how social attributes such as gender, class, and ethnicity are encoded or amplified by LLMs
+   - Upcoming work on AudioLLMs
+
 
 
 
