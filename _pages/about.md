@@ -7,36 +7,24 @@ redirect_from:
   - /about.html
 ---
 
-My name is **Minh Duc Bui** (you can call me **Duc**). I am a **PhD student in Natural Language Processing (NLP)** at the **Johannes Gutenberg University Mainz (Germany)**, supervised by **Katharina von der Wense (née Kann)**. My research examines the **cross-cultural aspects of large language models (LLMs)** — specifically, how they represent and respond to human diversity across three key dimensions:
-
+About Me
 ---
 
-#### **Linguistic Variation**
-Investigating how language form and variation (e.g., dialects, syntax, orthography) influence model performance.
+Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD student in Natural Language Processing (NLP)** at **Johannes Gutenberg University Mainz (Germany)**, supervised by **Katharina von der Wense (née Kann)**.  
 
-- [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) — EMNLP 2025  
-- *Upcoming:* Work on **Meenzerisch** (the dialect of Mainz, Germany)
+My research focuses on the **cross-cultural aspects of large language models (LLMs)**, examining how they represent and respond to human diversity across three key dimensions:  
 
----
+- **Linguistic variation:** How language form and variation (e.g., dialects, syntax, orthography) affect model performance.  
+  - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) — EMNLP 2025  
+  - *Upcoming:* Work on **Meenzerisch** (the dialect of Mainz, Germany)
+- **Cultural variation:** How cultural context, conventions, and norms shape model behaviour.  
+  - [*Multi3Hate*](https://aclanthology.org/2025.naacl-long.490/) — NAACL 2025  
+  - [*On Generalization across Measurement Systems*](https://aclanthology.org/2025.acl-long.1032/) — ACL 2025  
+  - *Upcoming:* Work on **Korean Honorific Translations**
+- **Socio-demographic variation:** How social attributes such as gender, identity, and ethnicity are encoded or amplified by LLMs.  
+  - *Upcoming:* Work on **AudioLLMs**
 
-#### **Cultural Variation**
-Exploring how cultural context, conventions, and norms shape model behaviour and interpretation.
-
-- [*Multi3Hate*](https://aclanthology.org/2025.naacl-long.490/) — NAACL 2025  
-- [*On Generalization across Measurement Systems*](https://aclanthology.org/2025.acl-long.1032/) — ACL 2025  
-- *Upcoming:* Work on **Korean Honorific Translations**
-
----
-
-#### **Socio-demographic Variation**
-Examining how social attributes such as gender, identity, and ethnicity are encoded or amplified by LLMs.
-
-- *Upcoming:* Work on **AudioLLMs**
-
----
-
-Together, these projects aim to advance our understanding of how LLMs internalize **linguistic, cultural, and social variation**, and how we can develop **more equitable and inclusive language technologies** for diverse user populations.
-
+Together, these studies aim to advance our understanding of how LLMs internalize linguistic, cultural, and social variation, and how we can design **more equitable and inclusive AI systems** for users across diverse backgrounds.
 
 
 
