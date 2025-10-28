@@ -36,7 +36,7 @@ Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD stude
   > - [*Multi3Hate: Cross-Cultural Hate Speech Detection*](https://aclanthology.org/2025.naacl-long.490/) @ *NAACL 2025*  
   > - [*On Generalization across Measurement Systems*](https://aclanthology.org/2025.acl-long.1032/) @ *ACL 2025*  
   > - *Upcoming:* Korean Honorific Translations
-- **Linguistic Variation:** How language form and variation (e.g., dialects, syntax, orthography) affect model behaviour  
+- **Linguistic Variation:** How language form and variation (e.g., dialects) affect model behaviour  
   > - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) @ *EMNLP 2025*  
   > - *Upcoming:* Meenzerisch (the dialect of Mainz, Germany)
 - **Socio-Demographic Variation:** How social attributes such as gender, identity, and ethnicity are encoded in model behaviour 
