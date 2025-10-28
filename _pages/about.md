@@ -40,7 +40,7 @@ Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD stude
   > - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) @ *EMNLP 2025*  
   > - *Upcoming:* Meenzerisch (the dialect of Mainz, Germany)
 - **Socio-Demographic Variation:** How social attributes such as gender, identity, and ethnicity are encoded or amplified by LLMs  
-  > - *Upcoming:* AudioLLMs
+  > - *Upcoming:* Demographic Bias in AudioLLMs
 
 Together, these studies advance insight into how LLMs capture diversity, guiding the development of AI systems that promote equity and inclusion across varied populations.
 
