@@ -7,12 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-About Me
----
-
-Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD student in Natural Language Processing (NLP)** at **Johannes Gutenberg University Mainz (Germany)**, supervised by **Katharina von der Wense (née Kann)**.  
-
-My research focuses on the **cross-cultural aspects of large language models (LLMs)**, examining how they represent and respond to human diversity across three key dimensions:  
+Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD student** in Natural Language Processing (NLP) at Johannes Gutenberg University Mainz (Germany), supervised by **Katharina von der Wense (née Kann)**. My research focuses on the **cross-cultural aspects of large language models (LLMs)**, examining how they represent and respond to human diversity across three key dimensions:  
 
 - **Linguistic variation:** How language form and variation (e.g., dialects, syntax, orthography) affect model performance.  
   - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) — EMNLP 2025  
