@@ -30,7 +30,7 @@ li > blockquote p {
 </style>
 
 
-Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD student** in Natural Language Processing (NLP) at Johannes Gutenberg University Mainz (Germany), supervised by **Katharina von der Wense (née Kann)**. My research focuses on **socially aware NLP**, investigating how LLM-based systems represent and respond to human diversity across linguistic, cultural, and socio-demographic dimensions.
+Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD student** in Natural Language Processing (NLP) at Johannes Gutenberg University Mainz (Germany), supervised by **Katharina von der Wense (née Kann)**. My research focuses on **socially aware NLP**, investigating how LLM-based systems represent and respond to human diversity across cultural, linguistic, and socio-demographic dimensions.
 
 - **Cultural Variation:** How cultural context, conventions, and norms shape model behaviour  
   > - [*Multi3Hate: Cross-Cultural Hate Speech Detection*](https://aclanthology.org/2025.naacl-long.490/) @ *NAACL 2025*  
