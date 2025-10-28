@@ -32,13 +32,13 @@ li > blockquote p {
 
 Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD student** in Natural Language Processing (NLP) at Johannes Gutenberg University Mainz (Germany), supervised by **Katharina von der Wense (née Kann)**. My research focuses on **socially aware NLP**, investigating how LLM-based systems represent and respond to human diversity across linguistic, cultural, and socio-demographic dimensions.
 
-- **Linguistic variation** — how language form and variation (e.g., dialects, syntax, orthography) affect model performance  
-  > - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) — *EMNLP 2025*  
-  > - *Upcoming:* Meenzerisch (the dialect of Mainz, Germany)
 - **Cultural variation** — how cultural context, conventions, and norms shape model behaviour  
   > - [*Multi3Hate: Cross-Cultural Hate Speech Detection*](https://aclanthology.org/2025.naacl-long.490/) — *NAACL 2025*  
   > - [*On Generalization across Measurement Systems*](https://aclanthology.org/2025.acl-long.1032/) — *ACL 2025*  
   > - *Upcoming:* Korean Honorific Translations
+- **Linguistic variation** — how language form and variation (e.g., dialects, syntax, orthography) affect model performance  
+  > - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) — *EMNLP 2025*  
+  > - *Upcoming:* Meenzerisch (the dialect of Mainz, Germany)
 - **Socio-demographic variation** — how social attributes such as gender, identity, and ethnicity are encoded or amplified by LLMs  
   > - *Upcoming:* AudioLLMs
 
