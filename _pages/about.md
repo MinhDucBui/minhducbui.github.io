@@ -7,21 +7,36 @@ redirect_from:
   - /about.html
 ---
 
-Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a PhD student in **Natural Language Processing (NLP)** at **Johannes Gutenberg University Mainz (Germany)**, supervised by **Katharina von der Wense (née Kann)**.  
+My name is **Minh Duc Bui** (you can call me **Duc**). I am a **PhD student in Natural Language Processing (NLP)** at the **Johannes Gutenberg University Mainz (Germany)**, supervised by **Katharina von der Wense (née Kann)**. My research examines the **cross-cultural aspects of large language models (LLMs)** — specifically, how they represent and respond to human diversity across three key dimensions:
 
-My research focuses on the **cross-cultural aspects of LLMs**, examining how they represent and respond to human diversity across three key dimensions:  
+---
 
-- **Linguistic Variation:** how language form and variation (e.g., dialects, syntax, orthography) affect model performance
-   - [Large Language Models Discriminate Against Speakers of German Dialects](https://arxiv.org/abs/2509.13835) at EMNLP 2025
-   - Upcoming work on Meenzerisch (the dialect of Mainz, Germany)
-- **Cultural Variation:** how cultural context, conventions, and norms shape model behaviour
-   - [Multi3Hate](https://aclanthology.org/2025.naacl-long.490/) at NAACL 2025
-   - [On Generalization across Measurement Systems](https://aclanthology.org/2025.acl-long.1032/) at ACL 2025
-   - Upcoming work on Korean Honorific Translations
-- **Socio-demographic Variation:** how social attributes such as gender, identity, and ethnicity are encoded or amplified by LLMs
-   - Upcoming work on AudioLLMs
+#### **Linguistic Variation**
+Investigating how language form and variation (e.g., dialects, syntax, orthography) influence model performance.
 
-Together, these studies aim to understand how LLMs internalize linguistic, cultural, and social variation and how we can design more equitable systems for users across diverse backgrounds.
+- [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) — EMNLP 2025  
+- *Upcoming:* Work on **Meenzerisch** (the dialect of Mainz, Germany)
+
+---
+
+#### **Cultural Variation**
+Exploring how cultural context, conventions, and norms shape model behaviour and interpretation.
+
+- [*Multi3Hate*](https://aclanthology.org/2025.naacl-long.490/) — NAACL 2025  
+- [*On Generalization across Measurement Systems*](https://aclanthology.org/2025.acl-long.1032/) — ACL 2025  
+- *Upcoming:* Work on **Korean Honorific Translations**
+
+---
+
+#### **Socio-demographic Variation**
+Examining how social attributes such as gender, identity, and ethnicity are encoded or amplified by LLMs.
+
+- *Upcoming:* Work on **AudioLLMs**
+
+---
+
+Together, these projects aim to advance our understanding of how LLMs internalize **linguistic, cultural, and social variation**, and how we can develop **more equitable and inclusive language technologies** for diverse user populations.
+
 
 
 
