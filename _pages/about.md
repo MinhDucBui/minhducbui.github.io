@@ -37,7 +37,7 @@ Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD stude
   > - [*On Generalization across Measurement Systems*](https://aclanthology.org/2025.acl-long.1032/) @ *ACL 2025*  
   > - *Upcoming:* Korean Honorific Translations
 
-- **Linguistic Variation:** How social meanings embedded in language variation (e.g., dialects) affect model behavior 
+- **Linguistic Variation:** How social implications embedded in language variation (e.g., dialects) affect model behavior 
   > - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) @ *EMNLP 2025*  
   > - *Upcoming:* Meenzerisch (the dialect of Mainz, Germany)
 
