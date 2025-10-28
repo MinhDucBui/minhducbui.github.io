@@ -16,7 +16,7 @@ My research focuses on the **cross-cultural aspects of LLMs**, examining how the
 - **Cultural Variation:** how cultural context, conventions, and norms shape model interpretation and reasoning
    - [Multi3Hate](https://aclanthology.org/2025.naacl-long.490/) at NAACL 2025
    - [On Generalization across Measurement Systems](https://aclanthology.org/2025.acl-long.1032/) at ACL 2025
-- **Socio-demographic Variation:** how social attributes such as gender, class, and ethnicity are encoded or amplified by LLMs
+- **Socio-demographic Variation:** how social attributes such as gender, identity, and ethnicity are encoded or amplified by LLMs
    - Upcoming work on AudioLLMs
 
 Together, these studies aim to understand how LLMs internalize linguistic, cultural, and social variation and how we can design more equitable systems for users across diverse backgrounds.
