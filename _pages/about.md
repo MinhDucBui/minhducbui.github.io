@@ -14,12 +14,10 @@ My research focuses on the **cross-cultural aspects of large language models (LL
 - **Linguistic variation** — how language form and variation (e.g., dialects, syntax, orthography) affect model performance  
   > - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) — *EMNLP 2025*  
   > - *Upcoming:* Meenzerisch (the dialect of Mainz, Germany)
-
 - **Cultural variation** — how cultural context, conventions, and norms shape model behaviour  
   > - [*Multi3Hate*](https://aclanthology.org/2025.naacl-long.490/) — *NAACL 2025*  
   > - [*On Generalization across Measurement Systems*](https://aclanthology.org/2025.acl-long.1032/) — *ACL 2025*  
   > - *Upcoming:* Korean Honorific Translations
-
 - **Socio-demographic variation** — how social attributes such as gender, identity, and ethnicity are encoded or amplified by LLMs  
   > - *Upcoming:* AudioLLMs
 
