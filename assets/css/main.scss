@@ -39,9 +39,3 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
-
-/* Tighten spacing between list items and nested blockquotes */
-li > blockquote {
-  margin-top: 0.25em !important;
-  margin-bottom: 0.25em !important;
-}

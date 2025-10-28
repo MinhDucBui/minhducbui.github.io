@@ -6,6 +6,25 @@ redirect_from:
   - /about/
   - /about.html
 ---
+<style>
+/* Remove excess gap above and below blockquotes inside list items */
+li > blockquote {
+  margin-top: 0.1em !important;
+  margin-bottom: 0.1em !important;
+}
+
+/* Optional: remove extra space before nested list inside blockquote */
+li > blockquote > ul {
+  margin-top: 0.1em !important;
+  margin-bottom: 0.1em !important;
+}
+
+/* Optional: tighten paragraph spacing inside blockquote */
+li > blockquote p {
+  margin-top: 0 !important;
+  margin-bottom: 0.1em !important;
+}
+</style>
 
 Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD student** in Natural Language Processing (NLP) at Johannes Gutenberg University Mainz (Germany), supervised by **Katharina von der Wense (née Kann)**.  
 
