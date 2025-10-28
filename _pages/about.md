@@ -32,7 +32,7 @@ li > blockquote p {
 
 Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD student** in Natural Language Processing (NLP) at Johannes Gutenberg University Mainz (Germany), supervised by **Katharina von der Wense (née Kann)**. My research focuses on **socially aware NLP**, investigating how LLM-based systems represent and respond to human diversity across cultural, linguistic, and socio-demographic dimensions.
 
-- **Cultural Variation:** How cultural context, conventions, and norms shape model behaviour  
+- **Cultural Variation:** How cultural contexts, conventions, and norms influence model behavior 
   > - [*Multi3Hate: Multicultural Hate Speech Detection*](https://aclanthology.org/2025.naacl-long.490/) @ *NAACL 2025*  
   > - [*On Generalization across Measurement Systems*](https://aclanthology.org/2025.acl-long.1032/) @ *ACL 2025*  
   > - *Upcoming:* Korean Honorific Translations
@@ -41,7 +41,7 @@ Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD stude
   > - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) @ *EMNLP 2025*  
   > - *Upcoming:* Meenzerisch (the dialect of Mainz, Germany)
 
-- **Socio-Demographic Variation:** How social attributes such as gender, identity, and ethnicity are encoded in model behaviour 
+- **Socio-Demographic Variation:** How social attributes such as gender, identity, and ethnicity shape model behavior 
   > - *Upcoming:* Demographic Bias in AudioLLMs
 
 Together, these studies advance insight into how LLMs capture diversity, guiding the development of AI systems that promote equity and inclusion across varied populations.
