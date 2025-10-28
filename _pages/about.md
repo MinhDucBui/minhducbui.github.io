@@ -7,7 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-Hi, My name is **Minh Duc Bui**, but you can call me Duc. I am a PhD student specializing in Natural Language Processing (NLP) at JGU Mainz (Germany), under the supervision of **Katharina von der Wense** (nèe Kann). My research centers on **cross-cultural NLP**, exploring how NLP techniques can be adapted to understand and respect cultural differences. I aim to develop models that are sensitive to cultural nuances, ultimately fostering better global communication and inclusivity in AI applications.
+Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a PhD student in **Natural Language Processing (NLP)** at **Johannes Gutenberg University Mainz (Germany)**, supervised by **Katharina von der Wense (née Kann)**. My current research focuses on **cross-cultural aspects of NLP** and the **broader implications of human interaction with LLMs**. I am particularly interested in how **linguistic** ([EMNLP 2025](https://arxiv.org/abs/2509.13835)), **cultural** ([NAACL 2025](https://aclanthology.org/2025.naacl-long.490/)), and **social** ([ACL 2025](https://aclanthology.org/2025.acl-long.1032/)) differences influence model behavior and how these differences can inadvertently disadvantage certain communities.
+
 
 
 Latest News ([See all](/news/))
