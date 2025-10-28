@@ -19,6 +19,8 @@ My research focuses on the **cross-cultural aspects of LLMs**, examining how the
 - **Socio-demographic Variation:** how social attributes such as gender, class, and ethnicity are encoded or amplified by LLMs
    - Upcoming work on AudioLLMs
 
+Together, these studies aim to understand how LLMs internalize linguistic, cultural, and social variation and how we can design more equitable systems for users across diverse backgrounds.
+
 
 
 
