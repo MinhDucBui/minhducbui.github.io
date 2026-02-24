@@ -39,7 +39,8 @@ Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD stude
 
 - **Linguistic Variation:** How social implications embedded in language variation (e.g., dialects) affect model behavior 
   > - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) @ *EMNLP 2025*  
-  > - *Upcoming:* Meenzerisch (the dialect of Mainz, Germany)
+  > - *Related:* 
+  > > - [*Meenz bleibt Meenz, but Large Language Models Do Not Speak Its Dialect*](https://www.arxiv.org/abs/2602.16852) @ *LREC 2026*  
 
 - **Socio-Demographic Variation:** How social attributes such as gender, identity, and ethnicity shape model behavior 
   > - *Upcoming:* Demographic Bias in AudioLLMs

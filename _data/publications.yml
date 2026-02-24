@@ -1,10 +1,18 @@
+- title: "Meenz bleibt Meenz, but Large Language Models Do Not Speak Its Dialect"
+  authors: "Minh Duc Bui, Manuel Mager, Peter Herbert Kann, Katharina von der Wense"
+  collection: "publications"
+  date: "2026-02-19"
+  venue: "LREC 2026"
+  type: "Conferences"
+  paperurl: "https://www.arxiv.org/abs/2602.16852"
+
 - title: "Large Language Models Discriminate Against Speakers of German Dialects"
   authors: "Minh Duc Bui*, Carolin Holtermann*, Valentin Hofmann, Anne Lauscher, Katharina von der Wense"
   collection: "publications"
   date: "2025-09-19"
   venue: "EMNLP (Main) 2025"
   type: "Conferences"
-  paperurl: "https://arxiv.org/abs/2509.13835"
+  paperurl: "https://aclanthology.org/2025.emnlp-main.415/"
 
 - title: "Mind the Gap: A Closer Look at Tokenization for Multiple-Choice Question Answering with LLMs"
   authors: "Mario Sanz-Guerrero, Minh Duc Bui, Katharina von der Wense"
@@ -12,7 +20,7 @@
   date: "2025-09-19"
   venue: "EMNLP (Main) 2025"
   type: "Conferences"
-  paperurl: "https://arxiv.org/abs/2509.15020"
+  paperurl: "https://aclanthology.org/2025.emnlp-main.988/"
 
 - title: "On Generalization across Measurement Systems: LLMs Entail More Test-Time Compute for Underrepresented Cultures"
   authors: "Minh Duc Bui, Kyung Eun Park, Goran Glavaš, Fabian David Schmidt, Katharina von der Wense"
