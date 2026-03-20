@@ -33,8 +33,8 @@ li > blockquote p {
 Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD student** in Natural Language Processing (NLP) at Johannes Gutenberg University (JGU) Mainz (Germany), supervised by **Katharina von der Wense (née Kann)**. My research focuses on **socially aware NLP**, examining how LLM-based systems represent and respond to human diversity as expressed through cultural, linguistic, and socio-demographic variation.
 
 - **Cultural Variation:** How cultural contexts, conventions, and norms influence model behavior 
-  > - [*Multi3Hate: Multicultural Hate Speech Detection*](https://aclanthology.org/2025.naacl-long.490/) @ *NAACL 2025*  
-  > - [*On Generalization across Measurement Systems*](https://aclanthology.org/2025.acl-long.1032/) @ *ACL 2025*  
+  > - [*Multi3Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models*](https://aclanthology.org/2025.naacl-long.490/) @ *NAACL 2025*  
+  > - [*On Generalization across Measurement Systems: LLMs Entail More Test-Time Compute for Underrepresented Cultures*](https://aclanthology.org/2025.acl-long.1032/) @ *ACL 2025*  
   > - *Upcoming:* Korean Honorific Translations
 
 - **Linguistic Variation:** How social implications embedded in language variation (e.g., dialects) affect model behavior 
