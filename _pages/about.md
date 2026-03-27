@@ -42,7 +42,7 @@ Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD stude
   > - [*Meenz bleibt Meenz, but Large Language Models Do Not Speak Its Dialect*](https://www.arxiv.org/abs/2602.16852) @ *LREC 2026*  
 
 - **Socio-Demographic Variation:** How social attributes such as gender, identity, and ethnicity shape model behavior 
-  > - *Upcoming:* Demographic Bias in AudioLLMs
+  > - [*Greater accessibility can amplify discrimination in generative AI*](https://arxiv.org/abs/2603.22260) *(Preprint)*  
 
 Together, these studies advance insight into how LLMs capture diversity, guiding the development of AI systems that promote equity and inclusion across varied populations.
 
