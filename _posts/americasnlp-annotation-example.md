@@ -1,7 +1,7 @@
 ---
-title: '🚧 Under Construction!! 🚧"'
-date: 2024-06-30
-permalink: /posts/2026/03/americasnlp26/
+title: 'AmericasNLP 2026 Annotation Guide"'
+date: 2026-04-30
+permalink: /posts/2026/04/americasnlp26/
 tags:
   - cool posts
 ---
