@@ -30,19 +30,19 @@ li > blockquote p {
 </style>
 
 
-Hi, I'm Duc, a PhD student in **Natural Language Processing** at JGU Mainz (Germany), supervised by Katharina von der Wense. I work on **AI safety and NLP**: rigorously measuring where LLM-based systems encode and amplify **social disparities** rooted in **cultural and linguistic variation** across text, vision, and audio, developing targeted interventions that reduce those failures, and studying how these harms scale with real-world deployment.
+Hi, I'm Duc, a PhD student at JGU Mainz (Germany), supervised by Katharina von der Wense. I work on **AI safety and NLP**: rigorously measuring where LLM-based systems encode and amplify **social disparities** rooted in **cultural and linguistic variation** across text, vision, and audio, developing targeted interventions that reduce those failures, and studying how these harms scale with real-world deployment.
 
 
-- **Cultural Variation:** How cultural contexts, conventions, and norms create measurable gaps in model behavior
+- **Cultural Variation:** Measuring and mitigating gaps in model behavior arising from cultural contexts, conventions, and norms
   > - [*Multi3Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models*](https://aclanthology.org/2025.naacl-long.490/) @ *NAACL 2025*
   > - [*On Generalization across Measurement Systems: LLMs Entail More Test-Time Compute for Underrepresented Cultures*](https://aclanthology.org/2025.acl-long.1032/) @ *ACL 2025*
   > - *Upcoming:* Korean Honorific Translations
 
-- **Linguistic Variation:** How social meaning embedded in language variation produces discriminatory model behavior with real consequences for speakers
+- **Linguistic Variation:**  Measuring and mitigating how social meaning in language variation drives discriminatory model behavior
   > - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) @ *EMNLP 2025*
   > - [*Meenz bleibt Meenz, but Large Language Models Do Not Speak Its Dialect*](https://www.arxiv.org/abs/2602.16852) @ *LREC 2026*
 
-- **Bias Propagation in NLP Pipelines:** How biases encoded in LLMs travel downstream into real-world systems, scaling with deployment
+- **Harm Propagation at Deployment Scale** Measuring and mitigating how biases in LLMs compound into harms as they scale through real-world deployment
   > - [*Greater accessibility can amplify discrimination in generative AI*](https://arxiv.org/abs/2603.22260) *(Preprint)*
   > - [*From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation*](https://arxiv.org/abs/2604.21716) @ *ACL 2026 Findings*
 
