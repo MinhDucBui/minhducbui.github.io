@@ -30,21 +30,23 @@ li > blockquote p {
 </style>
 
 
-Hi, my name is **Minh Duc Bui**, but you can call me **Duc**. I am a **PhD student** in Natural Language Processing (NLP) at Johannes Gutenberg University (JGU) Mainz (Germany), supervised by **Katharina von der Wense (née Kann)**. My research focuses on **socially aware NLP**, examining how LLM-based systems represent and respond to human diversity as expressed through cultural, linguistic, and socio-demographic variation.
+Hi, I'm Duc, a PhD student in **Natural Language Processing** at JGU Mainz (Germany), supervised by Katharina von der Wense. I work on **AI safety and NLP**: rigorously measuring where LLM-based systems encode and amplify **social disparities** rooted in **cultural and linguistic variation** across text, vision, and audio, developing targeted interventions that reduce those failures, and studying how these harms scale with real-world deployment.
 
-- **Cultural Variation:** How cultural contexts, conventions, and norms influence model behavior 
-  > - [*Multi3Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models*](https://aclanthology.org/2025.naacl-long.490/) @ *NAACL 2025*  
-  > - [*On Generalization across Measurement Systems: LLMs Entail More Test-Time Compute for Underrepresented Cultures*](https://aclanthology.org/2025.acl-long.1032/) @ *ACL 2025*  
+
+- **Cultural Variation:** How cultural contexts, conventions, and norms create measurable gaps in model behavior
+  > - [*Multi3Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models*](https://aclanthology.org/2025.naacl-long.490/) @ *NAACL 2025*
+  > - [*On Generalization across Measurement Systems: LLMs Entail More Test-Time Compute for Underrepresented Cultures*](https://aclanthology.org/2025.acl-long.1032/) @ *ACL 2025*
   > - *Upcoming:* Korean Honorific Translations
 
-- **Linguistic Variation:** How social implications embedded in language variation (e.g., dialects) affect model behavior 
-  > - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) @ *EMNLP 2025*  
-  > - [*Meenz bleibt Meenz, but Large Language Models Do Not Speak Its Dialect*](https://www.arxiv.org/abs/2602.16852) @ *LREC 2026*  
+- **Linguistic Variation:** How social meaning embedded in language variation produces discriminatory model behavior with real consequences for speakers
+  > - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) @ *EMNLP 2025*
+  > - [*Meenz bleibt Meenz, but Large Language Models Do Not Speak Its Dialect*](https://www.arxiv.org/abs/2602.16852) @ *LREC 2026*
 
-- **Socio-Demographic Variation:** How social attributes such as gender, identity, and ethnicity shape model behavior 
-  > - [*Greater accessibility can amplify discrimination in generative AI*](https://arxiv.org/abs/2603.22260) *(Preprint)*  
+- **Bias Propagation in NLP Pipelines:** How biases encoded in LLMs travel downstream into real-world systems, scaling with deployment
+  > - [*Greater accessibility can amplify discrimination in generative AI*](https://arxiv.org/abs/2603.22260) *(Preprint)*
+  > - [*From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation*](https://arxiv.org/abs/2604.21716) @ *ACL 2026 Findings*
 
-Together, these studies advance insight into how LLMs capture diversity, guiding the development of AI systems that promote equity and inclusion across varied populations.
+Together, these studies reflect my broader research agenda: building the empirical case that socially-encoded disparities in LLM behavior are a safety risk, one that scales with deployment, and developing targeted interventions that reduce them.
 
 
 Latest News ([See all](/news/))
