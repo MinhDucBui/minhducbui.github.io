@@ -11,7 +11,7 @@
   collection: "publications"
   date: "2026-03-23"
   venue: "Preprint"
-  type: "📄 Arxiv"
+  type: "📄 Preprint"
   paperurl: "https://arxiv.org/abs/2603.22260"
 
 - title: "Meenz bleibt Meenz, but Large Language Models Do Not Speak Its Dialect"
