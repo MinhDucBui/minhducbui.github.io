@@ -1,9 +1,17 @@
+- title: "From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation"
+  authors: "Minh Duc Bui, Xenia Heilmann, Mattia Cerrato, Manuel Mager, Katharina von der Wense"
+  collection: "publications"
+  date: "2026-05-23"
+  venue: "ACL (Findings) 2026"
+  type: "🏆 Conferences"
+  paperurl: "https://arxiv.org/abs/2604.21716"
+
 - title: "Greater accessibility can amplify discrimination in generative AI"
   authors: "Carolin Holtermann*, Minh Duc Bui*, Kaitlyn Zhou, Valentin Hofmann, Katharina von der Wense, Anne Lauscher"
   collection: "publications"
   date: "2026-03-23"
   venue: "Preprint"
-  type: "Arxiv"
+  type: "📄 Arxiv"
   paperurl: "https://arxiv.org/abs/2603.22260"
 
 - title: "Meenz bleibt Meenz, but Large Language Models Do Not Speak Its Dialect"
@@ -11,7 +19,7 @@
   collection: "publications"
   date: "2026-02-19"
   venue: "LREC 2026"
-  type: "Conferences"
+  type: "🏆 Conferences"
   paperurl: "https://www.arxiv.org/abs/2602.16852"
 
 - title: "Large Language Models Discriminate Against Speakers of German Dialects"
@@ -19,7 +27,7 @@
   collection: "publications"
   date: "2025-09-19"
   venue: "EMNLP (Main) 2025"
-  type: "Conferences"
+  type: "🏆 Conferences"
   paperurl: "https://aclanthology.org/2025.emnlp-main.415/"
 
 - title: "Mind the Gap: A Closer Look at Tokenization for Multiple-Choice Question Answering with LLMs"
@@ -27,7 +35,7 @@
   collection: "publications"
   date: "2025-09-19"
   venue: "EMNLP (Main) 2025"
-  type: "Conferences"
+  type: "🏆 Conferences"
   paperurl: "https://aclanthology.org/2025.emnlp-main.988/"
 
 - title: "On Generalization across Measurement Systems: LLMs Entail More Test-Time Compute for Underrepresented Cultures"
@@ -35,7 +43,7 @@
   collection: "publications"
   date: "2025-06-01"
   venue: "ACL (Main) 2025"
-  type: "Conferences"
+  type: "🏆 Conferences"
   paperurl: "https://aclanthology.org/2025.acl-long.1032/"
 
 - title: "Multi3Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models"
@@ -43,7 +51,7 @@
   collection: "publications"
   date: "2024-11-06"
   venue: "NAACL (Main) 2025"
-  type: "Conferences"
+  type: "🏆 Conferences"
   paperurl: "https://aclanthology.org/2025.naacl-long.490/"
   award: "Outstanding Paper Award"
 
@@ -52,7 +60,7 @@
   collection: "publications"
   date: "2024-05-05"
   venue: "5th Workshop on Insights from Negative Results in NLP @ NAACL 2024"
-  type: "Workshops"
+  type: "🛠️ Workshops"
   paperurl: "https://aclanthology.org/2024.insights-1.6/"
 
 - title: "The Trade-off between Performance, Efficiency, and Fairness in Adapter Modules for Text Classification"
@@ -60,7 +68,7 @@
   collection: "publications"
   date: "2024-05-04"
   venue: "4th Workshop on Trustworthy Natural Language Processing (TrustNLP) @ NAACL 2024"
-  type: "Workshops"
+  type: "🛠️ Workshops"
   paperurl: "https://aclanthology.org/2024.trustnlp-1.4/"
 
 
@@ -69,6 +77,6 @@
   collection: "publications"
   date: "2024-03-04"
   venue: "4th Workshop on Natural Language Processing for Indigenous Languages of the Americas (AmericasNLP 2024) @ NAACL 2024"
-  type: "Workshops"
+  type: "🛠️ Workshops"
   paperurl: "https://aclanthology.org/2024.americasnlp-1.23/"
 
