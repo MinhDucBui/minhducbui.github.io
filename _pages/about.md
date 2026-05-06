@@ -30,7 +30,8 @@ li > blockquote p {
 </style>
 
 
-Hi, I'm Duc, a PhD student at JGU Mainz (Germany), supervised by Katharina von der Wense. I work on **AI safety and NLP**: rigorously measuring and mitigating how LLM-based systems encode and amplify **social disparities** rooted in **cultural and linguistic variation** across text, vision, and audio. I also study how harms can arise from integrating AI models into real-world pipelines, and how to mitigate them.
+Hi, I'm Duc, a PhD student at JGU Mainz (Germany), supervised by Katharina von der Wense. I work on **AI safety and NLP**: rigorously measuring and mitigating how LLM-based systems encode and amplify **social disparities** rooted in **human diversity**, spanning **cultural and linguistic variation**, across text, vision, and audio. I also study how harms can arise from integrating AI models into real-world pipelines, and how to mitigate them.
+
 
 - **Cultural Variation:** Measuring and mitigating gaps in model behavior arising from cultural contexts, conventions, and norms
   > - [*Multi3Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models*](https://aclanthology.org/2025.naacl-long.490/) @ *NAACL 2025*
