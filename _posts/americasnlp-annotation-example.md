@@ -1,5 +1,5 @@
 ---
-title: 'AmericasNLP 2026 Annotation Guide"'
+title: 'AmericasNLP 2026 Annotation Guide'
 date: 2026-04-30
 permalink: /posts/2026/04/americasnlp26/
 tags:
