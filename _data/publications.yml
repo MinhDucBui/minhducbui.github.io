@@ -1,3 +1,11 @@
+- title: "Findings of the AmericasNLP 2026 Shared Task on Cultural Image Captioning for Indigenous Languages"
+  authors: "Minh Duc Bui, David Guzmán, Abteen Ebrahimi, Franklin Morales, Marvin Agüero-Torales, Raquel Insfrán, Cecilia González, Ramón Araujo, Luca Cernuzzi, Carlos Raul Noh Chi, Carlos Eduardo Tec Cahun, Sindi Estrella Poot Cohuo, Daniel Ricardo Benítez Chi, Santos Natanael Palomo Arévalo, Jessica Elizabeth Canul Canche, Deysi Aracely Poot Poot, Wendy Marleny Dzib Dzib, Eduardo José Ake Pool, Reynaldo Alexander Couoh Martin, Silvia Fernandez Sabido, Luis Samuel Santiago Melchor, Sotero Silverio, Robert Pugh, Raúl Vázquez, John E. Ortega, Arturo Oncevay, Rubén Manrique, Luis Chiruzzo, Rolando Coto-Solano, Elisabeth Mager, Shruti Rijhwani, David Ifeoluwa Adelani, Manuel Mager, Katharina von der Wense"
+  collection: "publications"
+  date: "2026-05-23"
+  venue: "AmericasNLP 2026"
+  type: "🛠️ Workshops"
+  paperurl: "https://aclanthology.org/2026.americasnlp-6.27/"
+
 - title: "From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation"
   authors: "Minh Duc Bui, Xenia Heilmann, Mattia Cerrato, Manuel Mager, Katharina von der Wense"
   collection: "publications"

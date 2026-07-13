@@ -36,7 +36,7 @@ Hi, I'm Duc, a PhD student at JGU Mainz (Germany), supervised by Katharina von d
 - **Cultural Variation:** Measuring and mitigating gaps in model behavior arising from cultural contexts, conventions, and norms
   > - [*Multi3Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models*](https://aclanthology.org/2025.naacl-long.490/) @ *NAACL 2025*
   > - [*On Generalization across Measurement Systems: LLMs Entail More Test-Time Compute for Underrepresented Cultures*](https://aclanthology.org/2025.acl-long.1032/) @ *ACL 2025*
-  > - [*Findings of the AmericasNLP 2026 shared task on cultural image captioning for Indigenous languages*](https://aclanthology.org/2026.americasnlp-6.27.pdf) @ *AmericasNLP 2026*
+  > - [*Findings of the AmericasNLP 2026 Shared Task on Cultural Image Captioning for Indigenous Languages*](https://aclanthology.org/2026.americasnlp-6.27.pdf) @ *AmericasNLP 2026*
 
 - **Linguistic Variation:**  Measuring and mitigating how social meaning in language variation drives discriminatory model behavior
   > - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) @ *EMNLP 2025*
