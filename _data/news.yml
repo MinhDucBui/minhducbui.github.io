@@ -1,3 +1,6 @@
+- date: "June 2026"
+  news: "📢 Our paper, <a href='https://aclanthology.org/2026.findings-acl.193/'>From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation </a>, has been accepted to <b>ACL 2026 Findings</b>! See you in San Diego, USA 🇺🇸! 🎉"
+
 - date: "Apr 2026"
   news: "🏭 I am at Hannover Messe, one of the biggest events for industry and innovation, presenting our latest research from the <a href='https://topml.uni-mainz.de'>TOPML</a> project, funded by Carl Zeiss Stiftung. Read more <a href='https://topml.uni-mainz.de/2026/04/14/hannover-messe/'>here</a>."
 
@@ -20,7 +23,7 @@
   news: "🏆 We're thrilled to share that our paper, <a href='https://aclanthology.org/2025.naacl-long.490/'>Multi³Hate</a>, has received the <b>Outstanding Paper Award</b> at NAACL 2025!"
 
 - date: "Jan, 2025"
-  news: "📢 Our paper, <a href='https://aclanthology.org/2025.naacl-long.490/'>Multi³Hate</a>, has been accepted to <b>NAACL 2025 (Main)</b>! See you in Albuquerque, New Mexico 🇺🇸! 🎉"
+  news: "📢 Our paper, <a href='https://aclanthology.org/2025.naacl-long.490/'>Multi³Hate</a>, has been accepted to <b>NAACL 2025 (Main)</b>! See you in Albuquerque, USA 🇺🇸! 🎉"
 
 - date: "Oct, 2024"
   news: "✅ Finished my research visit! Check out our work on multicultural hate speech: <a href='https://arxiv.org/abs/2411.03888'>Multi³Hate</a>."
