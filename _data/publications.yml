@@ -1,3 +1,11 @@
+- title: "Perspectives on Cross-Lingual Consistency in LLMs for Medical Questions"
+  authors: "Minh Duc Bui, Mario Sanz-Guerrero, Abteen Ebrahimi, Sagi Shaier, Peter Herbert Kann, Manuel Mager, Katharina von der Wense"
+  collection: "publications"
+  date: "2026-09-09"
+  venue: "EMNLP 2026"
+  type: "🏆 Conferences"
+  paperurl: "https://arxiv.org/pdf/2609.07687"
+
 - title: "Findings of the AmericasNLP 2026 Shared Task on Cultural Image Captioning for Indigenous Languages"
   authors: "Minh Duc Bui, David Guzmán, Abteen Ebrahimi, Franklin Morales, Marvin Agüero-Torales, Raquel Insfrán, Cecilia González, Ramón Araujo, Luca Cernuzzi, Carlos Raul Noh Chi, Carlos Eduardo Tec Cahun, Sindi Estrella Poot Cohuo, Daniel Ricardo Benítez Chi, Santos Natanael Palomo Arévalo, Jessica Elizabeth Canul Canche, Deysi Aracely Poot Poot, Wendy Marleny Dzib Dzib, Eduardo José Ake Pool, Reynaldo Alexander Couoh Martin, Silvia Fernandez Sabido, Luis Samuel Santiago Melchor, Sotero Silverio, Robert Pugh, Raúl Vázquez, John E. Ortega, Arturo Oncevay, Rubén Manrique, Luis Chiruzzo, Rolando Coto-Solano, Elisabeth Mager, Shruti Rijhwani, David Ifeoluwa Adelani, Manuel Mager, Katharina von der Wense"
   collection: "publications"
