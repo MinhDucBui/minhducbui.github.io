@@ -33,30 +33,33 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
 
   /* --- intro + stats ------------------------------------------------ */
   .cm-intro { color: var(--cm-ink); font-size: 1.02em; line-height: 1.55; max-width: 46em; }
-  .cm-stats {
-    display: flex; flex-wrap: wrap; gap: 10px; margin: 1.2em 0 1.6em;
-  }
-  .cm-stat {
-    flex: 1 1 92px; background: var(--cm-bg-soft);
-    border: 1px solid var(--cm-line); border-radius: 12px;
-    padding: 12px 10px; text-align: center;
-  }
-  .cm-stat .n {
-    font-size: 1.7em; font-weight: 700; color: var(--cm-accent-dark);
-    line-height: 1; letter-spacing: -0.5px;
-  }
-  .cm-stat .l {
-    font-size: 0.72em; text-transform: uppercase; letter-spacing: 0.06em;
-    color: var(--cm-muted); margin-top: 5px; font-weight: 600;
-  }
+  .cm-stat { border-radius: 12px; text-align: center; }
+  .cm-stat .n { font-weight: 700; color: var(--cm-accent-dark); line-height: 1; letter-spacing: -0.5px; }
+  .cm-stat .l { text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
+
+  /* primary stats — where I've been: bigger + accent-tinted (the headline numbers) */
+  .cm-stats-primary { display: flex; flex-wrap: wrap; gap: 12px; margin: 1.2em 0 10px; }
+  .cm-stat-lg { flex: 1 1 140px; background: #e9f6fb; border: 1px solid #b9dee9; padding: 18px 14px; }
+  .cm-stat-lg .n { font-size: 2.7em; }
+  .cm-stat-lg .l { font-size: 0.8em; color: var(--cm-accent-dark); margin-top: 7px; }
+
+  /* secondary stats — what I did there: smaller, quieter */
+  .cm-stats-secondary { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 1.8em; }
+  .cm-stat-sm { flex: 1 1 90px; background: var(--cm-bg-soft); border: 1px solid var(--cm-line); padding: 10px 8px; }
+  .cm-stat-sm .n { font-size: 1.4em; color: var(--cm-ink); }
+  .cm-stat-sm .l { font-size: 0.66em; color: var(--cm-muted); margin-top: 4px; }
 
   /* --- map ---------------------------------------------------------- */
   .cm-map-wrap {
     position: relative; border-radius: 16px; overflow: hidden;
     border: 1px solid var(--cm-line); box-shadow: 0 8px 28px rgba(31,111,136,0.10);
     margin-bottom: 2.4em;
+    transform: translateZ(0);   /* Safari: force a compositing layer so the rounded
+                                   overflow clip doesn't hide the transformed map tiles */
   }
-  #cm-map { height: 480px; width: 100%; background: #eaf1f4; z-index: 1; }
+  #cm-map { height: 480px; width: 100%; background: #eaf1f4; z-index: 1; border-radius: 16px; }
+  /* muted, clean look on top of the (reliable) OpenStreetMap tiles */
+  .cm-map-wrap .leaflet-tile-pane { filter: grayscale(0.55) brightness(1.04); }
 
   /* Leaflet marker: custom circular pin (uniform) */
   .cm-pin {
@@ -142,12 +145,14 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
   and research visits. Each pin is a stop; open it (or a timeline card) to see what was there.
 </p>
 
-<div class="cm-stats">
-  <div class="cm-stat"><div class="n">{{ conf_count }}</div><div class="l">Conferences</div></div>
-  <div class="cm-stat"><div class="n">{{ talk_count }}</div><div class="l">Talks</div></div>
-  <div class="cm-stat"><div class="n">{{ visit_count }}</div><div class="l">Visits</div></div>
-  <div class="cm-stat"><div class="n">{{ city_list.size }}</div><div class="l">Cities</div></div>
-  <div class="cm-stat"><div class="n">{{ country_list.size }}</div><div class="l">Countries</div></div>
+<div class="cm-stats-primary">
+  <div class="cm-stat cm-stat-lg"><div class="n">{{ city_list.size }}</div><div class="l">Cities</div></div>
+  <div class="cm-stat cm-stat-lg"><div class="n">{{ country_list.size }}</div><div class="l">Countries</div></div>
+</div>
+<div class="cm-stats-secondary">
+  <div class="cm-stat cm-stat-sm"><div class="n">{{ conf_count }}</div><div class="l">Conferences</div></div>
+  <div class="cm-stat cm-stat-sm"><div class="n">{{ talk_count }}</div><div class="l">Talks</div></div>
+  <div class="cm-stat cm-stat-sm"><div class="n">{{ visit_count }}</div><div class="l">Visits</div></div>
 </div>
 
 <div class="cm-map-wrap">
@@ -159,11 +164,12 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
 <ul class="cm-timeline">
 {% assign stops_desc = stops | reverse %}
 {% for s in stops_desc %}
+  {% assign kind_emoji = "🏆" %}{% if s.kind == "talk" %}{% assign kind_emoji = "🎤" %}{% elsif s.kind == "visit" %}{% assign kind_emoji = "🔬" %}{% endif %}
   <li class="cm-node" id="node-{{ s.id }}" data-id="{{ s.id }}">
     <span class="cm-bullet"></span>
     <div class="cm-card" id="card-{{ s.id }}">
       <div class="cm-card-top">
-        <span class="cm-conf-name">{{ s.name }}</span>
+        <span class="cm-conf-name">{{ kind_emoji }} {{ s.name }}</span>
         <span class="cm-date">{{ s.dates }}</span>
         <span class="cm-loc" data-goto="{{ s.id }}"><i class="fa fa-map-marker"></i>{{ s.flag }} {{ s.city }}, {{ s.country }}</span>
       </div>
@@ -191,12 +197,11 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
     const located = CM_STOPS.filter(s => s.lat && s.lng);
 
     const map = L.map('cm-map', { scrollWheelZoom: false, worldCopyJump: true });
-    // Esri light-gray canvas (free, no API key): muted base + labels on top
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-      attribution: 'Tiles &copy; Esri', maxZoom: 16
-    }).addTo(map);
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
-      maxZoom: 16, opacity: 0.9
+    // OpenStreetMap tiles: no API key, reliable everywhere (incl. Safari), rarely blocked.
+    // A light CSS grayscale filter (see .leaflet-tile-pane) keeps the clean, muted look.
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 18
     }).addTo(map);
 
     // chronological journey line
@@ -221,9 +226,10 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
           : `${p.title}`;
         return `<div class="cm-pop-item">${label}${aw}</div>`;
       }).join('');
+      const kindEmoji = s.kind === 'talk' ? '🎤' : (s.kind === 'visit' ? '🔬' : '🏆');
       m.bindPopup(
         `<div class="cm-pop-city">${s.flag || ''} ${s.city}, ${s.country}</div>` +
-        `<div class="cm-pop-meta">${s.name} · ${s.dates}</div>` +
+        `<div class="cm-pop-meta">${kindEmoji} ${s.name} · ${s.dates}</div>` +
         itemsHtml, { maxWidth: 300 }
       );
       m.on('click', () => {
