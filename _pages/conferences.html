@@ -1,0 +1,342 @@
+---
+layout: archive
+title: "Conference Map & Timeline"
+permalink: /conferences/
+author_profile: true
+sitemap: false   # keep out of sitemap.xml (jekyll-sitemap)
+hidden: true     # keep out of the human /sitemap/ page and any page loops
+---
+
+<!-- ============================================================
+     Hidden page (not linked in the nav). Documents the
+     conferences where papers were accepted, their locations,
+     and which paper was presented where.
+     Data lives in _data/conferences.yml — edit that file to
+     add/update entries; this page renders itself from it.
+     ============================================================ -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+<style>
+  :root {
+    --cm-accent:      #2f9fc0;   /* teal, matches site link color   */
+    --cm-accent-dark: #1f6f88;
+    --cm-conf:        #2f9fc0;   /* 🏆 conference marker            */
+    --cm-work:        #e8913a;   /* 🛠️ workshop marker              */
+    --cm-gold:        #e0a615;   /* awards / attended ring          */
+    --cm-ink:         #3b3f42;
+    --cm-muted:       #8a9199;
+    --cm-line:        #e3e8ec;
+    --cm-card:        #ffffff;
+    --cm-bg-soft:     #f6f9fb;
+  }
+
+  /* --- intro + stats ------------------------------------------------ */
+  .cm-intro { color: var(--cm-ink); font-size: 1.02em; line-height: 1.55; max-width: 46em; }
+  .cm-stats {
+    display: flex; flex-wrap: wrap; gap: 10px; margin: 1.1em 0 0.4em;
+  }
+  .cm-stat {
+    flex: 1 1 120px; background: var(--cm-bg-soft);
+    border: 1px solid var(--cm-line); border-radius: 12px;
+    padding: 12px 14px; text-align: center;
+  }
+  .cm-stat .n {
+    font-size: 1.7em; font-weight: 700; color: var(--cm-accent-dark);
+    line-height: 1; letter-spacing: -0.5px;
+  }
+  .cm-stat .l {
+    font-size: 0.72em; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--cm-muted); margin-top: 5px; font-weight: 600;
+  }
+
+  /* --- filter chips ------------------------------------------------- */
+  .cm-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 1.4em 0 0.9em; align-items: center; }
+  .cm-filters .lab { font-size: 0.78em; color: var(--cm-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 2px; }
+  .cm-chip {
+    cursor: pointer; user-select: none; border: 1px solid var(--cm-line);
+    background: #fff; color: var(--cm-ink); border-radius: 999px;
+    padding: 5px 13px; font-size: 0.85em; font-weight: 600; transition: all .15s ease;
+  }
+  .cm-chip:hover { border-color: var(--cm-accent); color: var(--cm-accent-dark); }
+  .cm-chip.active { background: var(--cm-accent); border-color: var(--cm-accent); color: #fff; }
+
+  /* --- map ---------------------------------------------------------- */
+  .cm-map-wrap {
+    position: relative; border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--cm-line); box-shadow: 0 8px 28px rgba(31,111,136,0.10);
+    margin-bottom: 2.4em;
+  }
+  #cm-map { height: 480px; width: 100%; background: #eaf1f4; z-index: 1; }
+  .cm-legend {
+    position: absolute; bottom: 12px; left: 12px; z-index: 500;
+    background: rgba(255,255,255,0.94); border: 1px solid var(--cm-line);
+    border-radius: 10px; padding: 8px 11px; font-size: 0.78em; color: var(--cm-ink);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); line-height: 1.7;
+  }
+  .cm-legend .row { display: flex; align-items: center; gap: 7px; }
+  .cm-legend .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; flex: none; }
+  .cm-legend .dot.gold-ring { box-shadow: 0 0 0 2px var(--cm-gold); }
+
+  /* Leaflet marker: custom circular pin */
+  .cm-pin {
+    width: 100%; height: 100%; border-radius: 50%;
+    border: 2.5px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 12px;
+  }
+  .cm-pin.attended { box-shadow: 0 0 0 3px var(--cm-gold), 0 2px 6px rgba(0,0,0,0.35); }
+  .leaflet-popup-content { margin: 11px 13px; font-size: 13px; line-height: 1.45; }
+  .cm-pop-city { font-weight: 700; color: var(--cm-accent-dark); font-size: 14px; }
+  .cm-pop-meta { color: var(--cm-muted); font-size: 11.5px; margin: 1px 0 7px; }
+  .cm-pop-paper { margin: 5px 0; padding-left: 15px; text-indent: -15px; }
+  .cm-pop-paper a { text-decoration: none; }
+
+  /* --- timeline ----------------------------------------------------- */
+  .cm-tl-head { font-size: 1.35em; font-weight: 700; color: var(--cm-ink); margin: 0.2em 0 1.1em; }
+  .cm-timeline { position: relative; margin: 0; padding: 0 0 0 6px; list-style: none; }
+  .cm-timeline::before {
+    content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px;
+    width: 2px; background: linear-gradient(var(--cm-accent), var(--cm-line));
+  }
+  .cm-node { position: relative; padding: 0 0 1.7em 40px; }
+  .cm-node .cm-bullet {
+    position: absolute; left: 0; top: 3px; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--cm-conf); border: 3px solid #fff;
+    box-shadow: 0 0 0 1.5px var(--cm-line); z-index: 2;
+  }
+  .cm-node.type-work .cm-bullet { background: var(--cm-work); }
+  .cm-node.attended .cm-bullet { box-shadow: 0 0 0 2px var(--cm-gold); }
+
+  .cm-card {
+    background: var(--cm-card); border: 1px solid var(--cm-line); border-radius: 14px;
+    padding: 14px 16px; transition: box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+    scroll-margin-top: 90px;
+  }
+  .cm-card:hover { box-shadow: 0 8px 22px rgba(31,111,136,0.12); border-color: #cfe3ea; }
+  .cm-card.flash { border-color: var(--cm-accent); box-shadow: 0 0 0 3px rgba(47,159,192,0.18); }
+
+  .cm-card-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 10px; margin-bottom: 3px; }
+  .cm-conf-name { font-size: 1.08em; font-weight: 700; color: var(--cm-ink); }
+  .cm-date { font-size: 0.8em; color: var(--cm-muted); font-weight: 600; }
+  .cm-loc {
+    display: inline-flex; align-items: center; gap: 5px; cursor: pointer;
+    font-size: 0.9em; color: var(--cm-accent-dark); font-weight: 600;
+  }
+  .cm-loc:hover { text-decoration: underline; }
+  .cm-loc .fa { font-size: 0.9em; }
+  .cm-badges { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; }
+  .cm-tag {
+    font-size: 0.68em; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 999px;
+  }
+  .cm-tag.attended { background: #fdf3d6; color: #9a7400; }
+  .cm-tag.accepted { background: #eef4f7; color: #4a7c8c; }
+  .cm-tag.upcoming { background: #f0ecfb; color: #6b52a8; }
+  .cm-tag.tba      { background: #f2f3f4; color: #7d858b; }
+
+  .cm-papers { list-style: none; margin: 9px 0 0; padding: 0; }
+  .cm-paper { display: flex; gap: 9px; padding: 6px 0; border-top: 1px dashed var(--cm-line); }
+  .cm-paper:first-child { border-top: none; }
+  .cm-paper .ic { flex: none; font-size: 1em; line-height: 1.5; width: 1.4em; text-align: center; }
+  .cm-paper .body { font-size: 0.92em; line-height: 1.4; }
+  .cm-paper .body a { font-weight: 600; text-decoration: none; color: var(--cm-ink); }
+  .cm-paper .body a:hover { color: var(--cm-accent-dark); text-decoration: underline; }
+  .cm-paper .sub { color: var(--cm-muted); font-size: 0.85em; }
+  .cm-award { color: var(--cm-gold); font-weight: 700; }
+
+  @media (max-width: 560px) {
+    #cm-map { height: 360px; }
+    .cm-badges { margin-left: 0; width: 100%; }
+  }
+</style>
+
+{% comment %} ---- derive summary stats from the data ---- {% endcomment %}
+{% assign confs = site.data.conferences | sort: "sort" %}
+{% assign countries = "" %}
+{% assign cities = "" %}
+{% assign paper_count = 0 %}
+{% for c in confs %}
+  {% assign paper_count = paper_count | plus: c.papers.size %}
+  {% unless c.country == "TBA" %}{% assign countries = countries | append: c.country | append: "||" %}{% endunless %}
+  {% unless c.city == "TBA" %}{% assign cities = cities | append: c.city | append: "||" %}{% endunless %}
+{% endfor %}
+{% assign country_list = countries | split: "||" | uniq %}
+{% assign city_list = cities | split: "||" | uniq %}
+
+<p class="cm-intro">
+  A map of the conferences where our papers were accepted and the cities that hosted them.
+  Gold-ringed pins mark the ones I attended in person. Open a pin — or a timeline card —
+  to see which papers were there.
+</p>
+
+<div class="cm-stats">
+  <div class="cm-stat"><div class="n">{{ paper_count }}</div><div class="l">Papers</div></div>
+  <div class="cm-stat"><div class="n">{{ confs.size }}</div><div class="l">Conferences</div></div>
+  <div class="cm-stat"><div class="n">{{ city_list.size }}</div><div class="l">Cities</div></div>
+  <div class="cm-stat"><div class="n">{{ country_list.size }}</div><div class="l">Countries</div></div>
+</div>
+
+<div class="cm-filters">
+  <span class="lab">Show</span>
+  <span class="cm-chip active" data-filter="all">All</span>
+  <span class="cm-chip" data-filter="conf">🏆 Conferences</span>
+  <span class="cm-chip" data-filter="work">🛠️ Workshops</span>
+</div>
+
+<div class="cm-map-wrap">
+  <div id="cm-map"></div>
+  <div class="cm-legend">
+    <div class="row"><span class="dot" style="background:var(--cm-conf)"></span> Conference</div>
+    <div class="row"><span class="dot" style="background:var(--cm-work)"></span> Workshop</div>
+    <div class="row"><span class="dot gold-ring" style="background:#fff"></span> Attended in person</div>
+  </div>
+</div>
+
+<div class="cm-tl-head">Timeline</div>
+
+<ul class="cm-timeline">
+{% assign confs_desc = confs | reverse %}
+{% for c in confs_desc %}
+  {% assign has_conf = false %}
+  {% for p in c.papers %}{% if p.type contains "Conf" or p.type contains "🏆" %}{% assign has_conf = true %}{% endif %}{% endfor %}
+  <li class="cm-node {% if has_conf %}type-conf{% else %}type-work{% endif %}{% if c.attended %} attended{% endif %}"
+      id="node-{{ c.id }}" data-id="{{ c.id }}"
+      data-kind="{% if has_conf %}conf{% else %}work{% endif %}">
+    <span class="cm-bullet"></span>
+    <div class="cm-card" id="card-{{ c.id }}">
+      <div class="cm-card-top">
+        <span class="cm-conf-name">{{ c.name }}</span>
+        <span class="cm-date">{{ c.dates }}</span>
+        {% if c.lat and c.city != "TBA" %}
+        <span class="cm-loc" data-goto="{{ c.id }}"><i class="fa fa-map-marker"></i>{{ c.flag }} {{ c.city }}, {{ c.country }}</span>
+        {% else %}
+        <span class="cm-loc" style="cursor:default"><i class="fa fa-map-marker"></i> Location TBA</span>
+        {% endif %}
+        <span class="cm-badges">
+          {% if c.attended %}<span class="cm-tag attended">📍 Attended</span>
+          {% elsif c.city == "TBA" %}<span class="cm-tag tba">TBA</span>
+          {% elsif c.upcoming %}<span class="cm-tag upcoming">Upcoming</span>
+          {% else %}<span class="cm-tag accepted">Accepted</span>{% endif %}
+        </span>
+      </div>
+      <ul class="cm-papers">
+        {% for p in c.papers %}
+        <li class="cm-paper">
+          <span class="ic">{% if p.type contains "Work" or p.type contains "🛠" %}🛠️{% else %}🏆{% endif %}</span>
+          <span class="body">
+            <a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>
+            {% if p.venue_detail %}<div class="sub">{{ p.venue_detail }}</div>{% endif %}
+            {% if p.award %}<div class="cm-award">🏅 {{ p.award }}</div>{% endif %}
+          </span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </li>
+{% endfor %}
+</ul>
+
+<script>
+  const CM_CONFS = {{ site.data.conferences | jsonify }};
+
+  (function () {
+    const accent = '#2f9fc0', work = '#e8913a', gold = '#e0a615';
+    const located = CM_CONFS.filter(c => c.lat && c.city !== 'TBA');
+
+    const map = L.map('cm-map', { scrollWheelZoom: false, worldCopyJump: true });
+    // Esri light-gray canvas (free, no API key): muted base + labels on top
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri',
+      maxZoom: 16
+    }).addTo(map);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 16, opacity: 0.9
+    }).addTo(map);
+
+    function isWorkshop(c) {
+      return c.papers.every(p => (p.type || '').match(/work|🛠/i));
+    }
+    function kindColor(c) { return isWorkshop(c) ? work : accent; }
+
+    // chronological journey line
+    const path = located.slice().sort((a, b) => (a.sort > b.sort ? 1 : -1));
+    if (path.length > 1) {
+      L.polyline(path.map(c => [c.lat, c.lng]), {
+        color: accent, weight: 2, opacity: 0.45, dashArray: '5,7'
+      }).addTo(map);
+    }
+
+    const markers = {};
+    located.forEach(c => {
+      const attended = !!c.attended;
+      const size = 26;
+      const html = `<div class="cm-pin${attended ? ' attended' : ''}" style="background:${kindColor(c)}">${c.papers.length}</div>`;
+      const icon = L.divIcon({ html, className: 'cm-pin-wrap', iconSize: [size, size], iconAnchor: [size/2, size/2] });
+      const m = L.marker([c.lat, c.lng], { icon }).addTo(map);
+
+      const papersHtml = c.papers.map(p => {
+        const ic = (p.type || '').match(/work|🛠/i) ? '🛠️' : '🏆';
+        const aw = p.award ? ` <span style="color:${gold};font-weight:700">🏅</span>` : '';
+        return `<div class="cm-pop-paper">${ic} <a href="${p.url}" target="_blank" rel="noopener">${p.title}</a>${aw}</div>`;
+      }).join('');
+      m.bindPopup(
+        `<div class="cm-pop-city">${c.flag || ''} ${c.city}, ${c.country}</div>` +
+        `<div class="cm-pop-meta">${c.name} · ${c.dates}${attended ? ' · 📍 attended' : ''}</div>` +
+        papersHtml, { maxWidth: 300 }
+      );
+      m.on('click', () => {
+        const card = document.getElementById('card-' + c.id);
+        if (card) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          card.classList.add('flash');
+          setTimeout(() => card.classList.remove('flash'), 1400);
+        }
+      });
+      markers[c.id] = m;
+    });
+
+    // fit to all points
+    if (located.length) {
+      map.fitBounds(located.map(c => [c.lat, c.lng]), { padding: [45, 45] });
+      if (map.getZoom() > 5) map.setZoom(5);
+    } else {
+      map.setView([25, 10], 2);
+    }
+
+    // timeline location click -> fly to marker + open popup
+    document.querySelectorAll('.cm-loc[data-goto]').forEach(el => {
+      el.addEventListener('click', () => {
+        const id = el.getAttribute('data-goto');
+        const m = markers[id];
+        if (m) {
+          document.getElementById('cm-map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          map.flyTo(m.getLatLng(), 5, { duration: 0.8 });
+          setTimeout(() => m.openPopup(), 850);
+        }
+      });
+    });
+
+    // filter chips
+    document.querySelectorAll('.cm-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.cm-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        const f = chip.getAttribute('data-filter');
+        document.querySelectorAll('.cm-node').forEach(n => {
+          n.style.display = (f === 'all' || n.getAttribute('data-kind') === f) ? '' : 'none';
+        });
+        located.forEach(c => {
+          const show = (f === 'all') || (isWorkshop(c) ? f === 'work' : f === 'conf');
+          const m = markers[c.id];
+          if (!m) return;
+          if (show) { m.addTo(map); } else { map.removeLayer(m); }
+        });
+      });
+    });
+
+    setTimeout(() => map.invalidateSize(), 200);
+  })();
+</script>
