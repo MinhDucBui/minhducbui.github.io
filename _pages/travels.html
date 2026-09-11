@@ -33,21 +33,17 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
 
   /* --- intro + stats ------------------------------------------------ */
   .cm-intro { color: var(--cm-ink); font-size: 1.02em; line-height: 1.55; max-width: 46em; }
-  .cm-stat { border-radius: 12px; text-align: center; }
-  .cm-stat .n { font-weight: 700; color: var(--cm-accent-dark); line-height: 1; letter-spacing: -0.5px; }
-  .cm-stat .l { text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
-
-  /* primary stats — where I've been: bigger + accent-tinted (the headline numbers) */
-  .cm-stats-primary { display: flex; flex-wrap: wrap; gap: 12px; margin: 1.2em 0 10px; }
-  .cm-stat-lg { flex: 1 1 140px; background: #e9f6fb; border: 1px solid #b9dee9; padding: 18px 14px; }
-  .cm-stat-lg .n { font-size: 2.7em; }
-  .cm-stat-lg .l { font-size: 0.8em; color: var(--cm-accent-dark); margin-top: 7px; }
-
-  /* secondary stats — what I did there: smaller, quieter */
-  .cm-stats-secondary { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 1.8em; }
-  .cm-stat-sm { flex: 1 1 90px; background: var(--cm-bg-soft); border: 1px solid var(--cm-line); padding: 10px 8px; }
-  .cm-stat-sm .n { font-size: 1.4em; color: var(--cm-ink); }
-  .cm-stat-sm .l { font-size: 0.66em; color: var(--cm-muted); margin-top: 4px; }
+  /* summary line — where I've been (big), what I did (smaller underneath) */
+  .cm-summary {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 14px;
+    margin: 1.3em 0 5px; color: var(--cm-ink);
+  }
+  .cm-summary .lead { font-size: 1.05em; font-weight: 600; white-space: nowrap; }
+  .cm-summary .num { font-size: 1.95em; font-weight: 800; color: var(--cm-accent-dark); letter-spacing: -0.5px; margin-right: 5px; }
+  .cm-summary-sub { display: flex; flex-wrap: wrap; gap: 0 12px; margin: 0 0 1.9em; color: var(--cm-muted); font-size: 0.95em; font-weight: 600; }
+  .cm-summary-sub span { white-space: nowrap; }
+  .cm-summary-sub .num { color: var(--cm-ink); font-weight: 800; margin-right: 3px; }
+  .cm-dot { color: #cbd5da; font-weight: 400; }
 
   /* --- map ---------------------------------------------------------- */
   .cm-map-wrap {
@@ -132,14 +128,17 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
   and research visits. Each pin is a stop; open it (or a timeline card) to see what was there.
 </p>
 
-<div class="cm-stats-primary">
-  <div class="cm-stat cm-stat-lg"><div class="n">{{ city_list.size }}</div><div class="l">Cities</div></div>
-  <div class="cm-stat cm-stat-lg"><div class="n">{{ country_list.size }}</div><div class="l">Countries</div></div>
+<div class="cm-summary">
+  <span class="lead"><span class="num">{{ city_list.size }}</span>cities</span>
+  <span class="cm-dot">·</span>
+  <span class="lead"><span class="num">{{ country_list.size }}</span>countries</span>
 </div>
-<div class="cm-stats-secondary">
-  <div class="cm-stat cm-stat-sm"><div class="n">{{ conf_count }}</div><div class="l">Conferences</div></div>
-  <div class="cm-stat cm-stat-sm"><div class="n">{{ talk_count }}</div><div class="l">Talks</div></div>
-  <div class="cm-stat cm-stat-sm"><div class="n">{{ visit_count }}</div><div class="l">Visits</div></div>
+<div class="cm-summary-sub">
+  <span><span class="num">{{ conf_count }}</span>conferences</span>
+  <span class="cm-dot">·</span>
+  <span><span class="num">{{ talk_count }}</span>talks</span>
+  <span class="cm-dot">·</span>
+  <span><span class="num">{{ visit_count }}</span>research visits</span>
 </div>
 
 <div class="cm-map-wrap">
