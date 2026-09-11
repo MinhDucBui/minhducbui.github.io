@@ -1,25 +1,35 @@
 # =============================================================================
-# Conference map & timeline data  ->  rendered by _pages/conferences.html
-# (hidden page at /conferences/, not linked in the nav)
+# Research travels  ->  rendered by _pages/travels.html  (hidden page /travels/)
 #
-# One entry per conference edition. Papers are listed under each.
-# Locations/dates were verified against the official conference sites.
+# Conferences (papers accepted) and invited talks, with where they took place.
+# Locations/dates verified against official sources.
 #
 # HOW TO EDIT:
-#  - Add a new conference: copy a block, keep `id` unique (kebab-case).
-#  - `attended: true`  -> gold ring on the map pin + "📍 Attended" tag.
-#      Currently only set where attendance is explicitly documented
-#      (NAACL 2024, Mexico City). Flip it to true for any you attended
-#      in person (e.g. Albuquerque, Vienna, Suzhou, ...).
-#  - `upcoming: true`  -> "Upcoming" tag (for events still ahead).
-#  - `lat`/`lng` place the map pin. San Diego hosts two 2026 venues
-#    (ACL + AmericasNLP), so AmericasNLP is nudged slightly so both pins
-#    stay clickable.
-#  - Paper `type` uses "🏆 Conference" or "🛠️ Workshop".
-#  - The Preprint (no venue) is intentionally not shown here.
+#  - One entry per stop. Copy a block; keep `id` unique (kebab-case).
+#  - `kind:` is "conference" or "talk"  (used only for the stat counts).
+#  - `items:` = papers (for a conference) or the talk (for a talk).
+#      * `url` is optional — omit it and the title renders as plain text.
+#      * `venue_detail` and `award` are optional.
+#  - `lat`/`lng` place the map pin. The Preprint (no venue) is not shown.
 # =============================================================================
 
+- id: hamburg-visit
+  kind: visit
+  name: "University of Hamburg"
+  city: "Hamburg"
+  country: "Germany"
+  flag: "🇩🇪"
+  lat: 53.5511
+  lng: 9.9937
+  dates: "May – Aug 2024"
+  sort: "2024-05-01"
+  items:
+    - title: "Research visit — Prof. Dr. Anne Lauscher's group"
+      url: "https://anne-lauscher.de"
+      venue_detail: "Data Science, University of Hamburg"
+
 - id: naacl-2024
+  kind: conference
   name: "NAACL 2024"
   city: "Mexico City"
   country: "Mexico"
@@ -28,23 +38,20 @@
   lng: -99.1332
   dates: "Jun 16–21, 2024"
   sort: "2024-06-16"
-  attended: true
-  papers:
+  items:
     - title: "Knowledge Distillation vs. Pretraining from Scratch under a Fixed (Computation) Budget"
       url: "https://aclanthology.org/2024.insights-1.6/"
-      type: "🛠️ Workshop"
       venue_detail: "Insights from Negative Results Workshop"
     - title: "The Trade-off between Performance, Efficiency, and Fairness in Adapter Modules for Text Classification"
       url: "https://aclanthology.org/2024.trustnlp-1.4/"
-      type: "🛠️ Workshop"
       venue_detail: "TrustNLP Workshop"
     - title: "JGU Mainz's Submission to the AmericasNLP 2024 Shared Task on the Creation of Educational Materials for Indigenous Languages"
       url: "https://aclanthology.org/2024.americasnlp-1.23/"
-      type: "🛠️ Workshop"
       venue_detail: "AmericasNLP 2024 Workshop"
       award: "2nd place — Shared Task"
 
 - id: naacl-2025
+  kind: conference
   name: "NAACL 2025"
   city: "Albuquerque"
   country: "USA"
@@ -53,15 +60,14 @@
   lng: -106.6504
   dates: "Apr 29 – May 4, 2025"
   sort: "2025-04-29"
-  attended: false
-  papers:
+  items:
     - title: "Multi³Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models"
       url: "https://aclanthology.org/2025.naacl-long.490/"
-      type: "🏆 Conference"
       venue_detail: "NAACL Main"
       award: "Outstanding Paper Award"
 
 - id: acl-2025
+  kind: conference
   name: "ACL 2025"
   city: "Vienna"
   country: "Austria"
@@ -70,14 +76,28 @@
   lng: 16.3738
   dates: "Jul 27 – Aug 1, 2025"
   sort: "2025-07-27"
-  attended: false
-  papers:
+  items:
     - title: "On Generalization across Measurement Systems: LLMs Entail More Test-Time Compute for Underrepresented Cultures"
       url: "https://aclanthology.org/2025.acl-long.1032/"
-      type: "🏆 Conference"
       venue_detail: "ACL Main"
 
+- id: uzh-cvrm
+  kind: talk
+  name: "CVRM Symposium"
+  city: "Zurich"
+  country: "Switzerland"
+  flag: "🇨🇭"
+  lat: 47.3769
+  lng: 8.5417
+  dates: "Aug 5, 2025"
+  sort: "2025-08-05"
+  items:
+    - title: "Multi³Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models"
+      url: "https://aclanthology.org/2025.naacl-long.490/"
+      venue_detail: "Invited talk · IKMZ, Dept. of Communication & Media Research, University of Zurich"
+
 - id: emnlp-2025
+  kind: conference
   name: "EMNLP 2025"
   city: "Suzhou"
   country: "China"
@@ -86,18 +106,16 @@
   lng: 120.5853
   dates: "Nov 4–9, 2025"
   sort: "2025-11-04"
-  attended: false
-  papers:
+  items:
     - title: "Large Language Models Discriminate Against Speakers of German Dialects"
       url: "https://aclanthology.org/2025.emnlp-main.415/"
-      type: "🏆 Conference"
       venue_detail: "EMNLP Main"
     - title: "Mind the Gap: A Closer Look at Tokenization for Multiple-Choice Question Answering with LLMs"
       url: "https://aclanthology.org/2025.emnlp-main.988/"
-      type: "🏆 Conference"
       venue_detail: "EMNLP Main"
 
 - id: lrec-2026
+  kind: conference
   name: "LREC 2026"
   city: "Palma de Mallorca"
   country: "Spain"
@@ -106,14 +124,27 @@
   lng: 2.6502
   dates: "May 11–16, 2026"
   sort: "2026-05-11"
-  attended: false
-  papers:
+  items:
     - title: "Meenz bleibt Meenz, but Large Language Models Do Not Speak Its Dialect"
       url: "https://www.arxiv.org/abs/2602.16852"
-      type: "🏆 Conference"
       venue_detail: "LREC"
 
+- id: stuttgart-dh
+  kind: talk
+  name: "Digital Humanities Colloquium"
+  city: "Stuttgart"
+  country: "Germany"
+  flag: "🇩🇪"
+  lat: 48.7758
+  lng: 9.1829
+  dates: "Jun 17, 2026"
+  sort: "2026-06-17"
+  items:
+    - title: "Culturally Grounded Datasets for NLP"
+      venue_detail: "Invited talk · University of Stuttgart (orig. “Kulturell verankerte Datensätze für NLP”)"
+
 - id: acl-2026
+  kind: conference
   name: "ACL 2026"
   city: "San Diego"
   country: "USA"
@@ -122,30 +153,30 @@
   lng: -117.1611
   dates: "Jul 2–7, 2026"
   sort: "2026-07-02"
-  attended: false
-  papers:
+  items:
     - title: "From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation"
       url: "https://arxiv.org/abs/2604.21716"
-      type: "🏆 Conference"
-      venue_detail: "ACL Findings"
-
-- id: americasnlp-2026
-  name: "AmericasNLP 2026"
-  city: "San Diego"
-  country: "USA"
-  flag: "🇺🇸"
-  lat: 32.7600            # nudged from ACL 2026 (co-located) so both pins are clickable
-  lng: -117.1000
-  dates: "Jul 3–4, 2026"
-  sort: "2026-07-03"
-  attended: false
-  papers:
+      venue_detail: "ACL 2026 Findings"
     - title: "Findings of the AmericasNLP 2026 Shared Task on Cultural Image Captioning for Indigenous Languages"
       url: "https://aclanthology.org/2026.americasnlp-6.27/"
-      type: "🛠️ Workshop"
       venue_detail: "AmericasNLP 2026 Workshop · co-located with ACL 2026"
 
+- id: stanford-visit
+  kind: visit
+  name: "Stanford University"
+  city: "Stanford"
+  country: "USA"
+  flag: "🇺🇸"
+  lat: 37.4275
+  lng: -122.1697
+  dates: "Sep – Dec 2026"
+  sort: "2026-09-01"
+  items:
+    - title: "Research visit"
+      venue_detail: "Stanford University"   # add host lab/group here if you like
+
 - id: emnlp-2026
+  kind: conference
   name: "EMNLP 2026"
   city: "Budapest"
   country: "Hungary"
@@ -154,10 +185,7 @@
   lng: 19.0402
   dates: "Oct 24–29, 2026"
   sort: "2026-10-24"
-  attended: false
-  upcoming: true
-  papers:
+  items:
     - title: "Perspectives on Cross-Lingual Consistency in LLMs for Medical Questions"
       url: "https://arxiv.org/pdf/2609.07687"
-      type: "🏆 Conference"
       venue_detail: "EMNLP Main"

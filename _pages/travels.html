@@ -1,0 +1,268 @@
+---
+layout: archive
+title: "Research Travels"
+permalink: /travels/
+author_profile: true
+sitemap: false   # keep out of sitemap.xml (jekyll-sitemap)
+hidden: true     # keep out of the human /sitemap/ page and any page loops
+---
+
+<!-- ============================================================
+     Hidden page (not linked in the nav). A map + timeline of
+     where I've traveled for research: conferences (papers) and
+     invited talks.
+     Data lives in _data/travels.yml — edit that file to
+     add/update entries; this page renders itself from it.
+     ============================================================ -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+<style>
+  :root {
+    --cm-accent:      #2f9fc0;   /* teal, matches site link color   */
+    --cm-accent-dark: #1f6f88;
+    --cm-gold:        #e0a615;   /* awards                          */
+    --cm-ink:         #3b3f42;
+    --cm-muted:       #8a9199;
+    --cm-line:        #e3e8ec;
+    --cm-card:        #ffffff;
+    --cm-bg-soft:     #f6f9fb;
+  }
+
+  /* --- intro + stats ------------------------------------------------ */
+  .cm-intro { color: var(--cm-ink); font-size: 1.02em; line-height: 1.55; max-width: 46em; }
+  .cm-stats {
+    display: flex; flex-wrap: wrap; gap: 10px; margin: 1.2em 0 1.6em;
+  }
+  .cm-stat {
+    flex: 1 1 92px; background: var(--cm-bg-soft);
+    border: 1px solid var(--cm-line); border-radius: 12px;
+    padding: 12px 10px; text-align: center;
+  }
+  .cm-stat .n {
+    font-size: 1.7em; font-weight: 700; color: var(--cm-accent-dark);
+    line-height: 1; letter-spacing: -0.5px;
+  }
+  .cm-stat .l {
+    font-size: 0.72em; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--cm-muted); margin-top: 5px; font-weight: 600;
+  }
+
+  /* --- map ---------------------------------------------------------- */
+  .cm-map-wrap {
+    position: relative; border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--cm-line); box-shadow: 0 8px 28px rgba(31,111,136,0.10);
+    margin-bottom: 2.4em;
+  }
+  #cm-map { height: 480px; width: 100%; background: #eaf1f4; z-index: 1; }
+
+  /* Leaflet marker: custom circular pin (uniform) */
+  .cm-pin {
+    width: 100%; height: 100%; border-radius: 50%;
+    background: var(--cm-accent); border: 2.5px solid #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 12px;
+  }
+  .leaflet-popup-content { margin: 11px 13px; font-size: 13px; line-height: 1.45; }
+  .cm-pop-city { font-weight: 700; color: var(--cm-accent-dark); font-size: 14px; }
+  .cm-pop-meta { color: var(--cm-muted); font-size: 11.5px; margin: 1px 0 7px; }
+  .cm-pop-item { margin: 5px 0; padding-left: 15px; text-indent: -15px; }
+  .cm-pop-item a { text-decoration: none; }
+
+  /* --- timeline ----------------------------------------------------- */
+  .cm-tl-head { font-size: 1.35em; font-weight: 700; color: var(--cm-ink); margin: 0.2em 0 1.1em; }
+  .cm-timeline { position: relative; margin: 0; padding: 0 0 0 6px; list-style: none; }
+  .cm-timeline::before {
+    content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px;
+    width: 2px; background: linear-gradient(var(--cm-accent), var(--cm-line));
+  }
+  .cm-node { position: relative; padding: 0 0 1.7em 40px; }
+  .cm-node .cm-bullet {
+    position: absolute; left: 0; top: 3px; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--cm-accent); border: 3px solid #fff;
+    box-shadow: 0 0 0 1.5px var(--cm-line); z-index: 2;
+  }
+
+  .cm-card {
+    background: var(--cm-card); border: 1px solid var(--cm-line); border-radius: 14px;
+    padding: 14px 16px; transition: box-shadow .18s ease, border-color .18s ease;
+    scroll-margin-top: 90px;
+  }
+  .cm-card:hover { box-shadow: 0 8px 22px rgba(31,111,136,0.12); border-color: #cfe3ea; }
+  .cm-card.flash { border-color: var(--cm-accent); box-shadow: 0 0 0 3px rgba(47,159,192,0.18); }
+
+  .cm-card-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 10px; margin-bottom: 3px; }
+  .cm-conf-name { font-size: 1.08em; font-weight: 700; color: var(--cm-ink); }
+  .cm-date { font-size: 0.8em; color: var(--cm-muted); font-weight: 600; }
+  .cm-loc {
+    display: inline-flex; align-items: center; gap: 5px; cursor: pointer;
+    font-size: 0.9em; color: var(--cm-accent-dark); font-weight: 600; margin-left: auto;
+  }
+  .cm-loc:hover { text-decoration: underline; }
+  .cm-loc .fa { font-size: 0.9em; }
+
+  .cm-papers { list-style: none; margin: 9px 0 0; padding: 0; }
+  .cm-paper { padding: 6px 0; border-top: 1px dashed var(--cm-line); }
+  .cm-paper:first-child { border-top: none; }
+  .cm-paper .body { font-size: 0.92em; line-height: 1.4; }
+  .cm-paper .body a { font-weight: 600; text-decoration: none; color: var(--cm-ink); }
+  .cm-paper .body a:hover { color: var(--cm-accent-dark); text-decoration: underline; }
+  .cm-paper .body .plain { font-weight: 600; color: var(--cm-ink); }
+  .cm-paper .sub { color: var(--cm-muted); font-size: 0.85em; }
+  .cm-award { color: var(--cm-gold); font-weight: 700; font-size: 0.9em; }
+
+  @media (max-width: 560px) {
+    #cm-map { height: 360px; }
+    .cm-loc { margin-left: 0; width: 100%; }
+  }
+</style>
+
+{% comment %} ---- derive summary stats from the data ---- {% endcomment %}
+{% assign stops = site.data.travels | sort: "sort" %}
+{% assign conf_count = 0 %}
+{% assign talk_count = 0 %}
+{% assign visit_count = 0 %}
+{% assign countries = "" %}
+{% assign cities = "" %}
+{% for s in stops %}
+  {% if s.kind == "talk" %}{% assign talk_count = talk_count | plus: 1 %}
+  {% elsif s.kind == "visit" %}{% assign visit_count = visit_count | plus: 1 %}
+  {% else %}{% assign conf_count = conf_count | plus: 1 %}{% endif %}
+  {% assign countries = countries | append: s.country | append: "||" %}
+  {% assign cities = cities | append: s.city | append: "||" %}
+{% endfor %}
+{% assign country_list = countries | split: "||" | uniq %}
+{% assign city_list = cities | split: "||" | uniq %}
+
+<p class="cm-intro">
+  Places I've traveled for research — conferences where our papers were accepted, invited talks,
+  and research visits. Each pin is a stop; open it (or a timeline card) to see what was there.
+</p>
+
+<div class="cm-stats">
+  <div class="cm-stat"><div class="n">{{ conf_count }}</div><div class="l">Conferences</div></div>
+  <div class="cm-stat"><div class="n">{{ talk_count }}</div><div class="l">Talks</div></div>
+  <div class="cm-stat"><div class="n">{{ visit_count }}</div><div class="l">Visits</div></div>
+  <div class="cm-stat"><div class="n">{{ city_list.size }}</div><div class="l">Cities</div></div>
+  <div class="cm-stat"><div class="n">{{ country_list.size }}</div><div class="l">Countries</div></div>
+</div>
+
+<div class="cm-map-wrap">
+  <div id="cm-map"></div>
+</div>
+
+<div class="cm-tl-head">Timeline</div>
+
+<ul class="cm-timeline">
+{% assign stops_desc = stops | reverse %}
+{% for s in stops_desc %}
+  <li class="cm-node" id="node-{{ s.id }}" data-id="{{ s.id }}">
+    <span class="cm-bullet"></span>
+    <div class="cm-card" id="card-{{ s.id }}">
+      <div class="cm-card-top">
+        <span class="cm-conf-name">{{ s.name }}</span>
+        <span class="cm-date">{{ s.dates }}</span>
+        <span class="cm-loc" data-goto="{{ s.id }}"><i class="fa fa-map-marker"></i>{{ s.flag }} {{ s.city }}, {{ s.country }}</span>
+      </div>
+      <ul class="cm-papers">
+        {% for p in s.items %}
+        <li class="cm-paper">
+          <span class="body">
+            {% if p.url and p.url != "" %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}<span class="plain">{{ p.title }}</span>{% endif %}
+            {% if p.venue_detail %}<div class="sub">{{ p.venue_detail }}</div>{% endif %}
+            {% if p.award %}<div class="cm-award">🏅 {{ p.award }}</div>{% endif %}
+          </span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </li>
+{% endfor %}
+</ul>
+
+<script>
+  const CM_STOPS = {{ site.data.travels | jsonify }};
+
+  (function () {
+    const accent = '#2f9fc0', gold = '#e0a615';
+    const located = CM_STOPS.filter(s => s.lat && s.lng);
+
+    const map = L.map('cm-map', { scrollWheelZoom: false, worldCopyJump: true });
+    // Esri light-gray canvas (free, no API key): muted base + labels on top
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri', maxZoom: 16
+    }).addTo(map);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 16, opacity: 0.9
+    }).addTo(map);
+
+    // chronological journey line
+    const path = located.slice().sort((a, b) => (a.sort > b.sort ? 1 : -1));
+    if (path.length > 1) {
+      L.polyline(path.map(s => [s.lat, s.lng]), {
+        color: accent, weight: 2, opacity: 0.45, dashArray: '5,7'
+      }).addTo(map);
+    }
+
+    const markers = {};
+    located.forEach(s => {
+      const size = 26;
+      const html = `<div class="cm-pin">${s.items.length}</div>`;
+      const icon = L.divIcon({ html, className: 'cm-pin-wrap', iconSize: [size, size], iconAnchor: [size/2, size/2] });
+      const m = L.marker([s.lat, s.lng], { icon }).addTo(map);
+
+      const itemsHtml = s.items.map(p => {
+        const aw = p.award ? ` <span style="color:${gold};font-weight:700">🏅</span>` : '';
+        const label = (p.url && p.url !== '')
+          ? `<a href="${p.url}" target="_blank" rel="noopener">${p.title}</a>`
+          : `${p.title}`;
+        return `<div class="cm-pop-item">${label}${aw}</div>`;
+      }).join('');
+      m.bindPopup(
+        `<div class="cm-pop-city">${s.flag || ''} ${s.city}, ${s.country}</div>` +
+        `<div class="cm-pop-meta">${s.name} · ${s.dates}</div>` +
+        itemsHtml, { maxWidth: 300 }
+      );
+      m.on('click', () => {
+        const card = document.getElementById('card-' + s.id);
+        if (card) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          card.classList.add('flash');
+          setTimeout(() => card.classList.remove('flash'), 1400);
+        }
+      });
+      markers[s.id] = m;
+    });
+
+    // fit to all points — do it AFTER invalidateSize so the container has its
+    // final size (fitBounds before layout settles zooms into a tiny region).
+    function fitAll() {
+      map.invalidateSize();
+      if (located.length) {
+        map.fitBounds(located.map(s => [s.lat, s.lng]), { padding: [40, 40] });
+        if (map.getZoom() > 5) map.setZoom(5);
+      } else {
+        map.setView([25, 10], 2);
+      }
+    }
+    fitAll();
+    setTimeout(fitAll, 250);
+    window.addEventListener('load', fitAll);
+
+    // timeline location click -> fly to marker + open popup
+    document.querySelectorAll('.cm-loc[data-goto]').forEach(el => {
+      el.addEventListener('click', () => {
+        const id = el.getAttribute('data-goto');
+        const m = markers[id];
+        if (m) {
+          document.getElementById('cm-map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          map.flyTo(m.getLatLng(), 5, { duration: 0.8 });
+          setTimeout(() => m.openPopup(), 850);
+        }
+      });
+    });
+  })();
+</script>
