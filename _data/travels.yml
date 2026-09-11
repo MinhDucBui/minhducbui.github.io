@@ -174,18 +174,3 @@
   items:
     - title: "Research visit"
       venue_detail: "Stanford University"   # add host lab/group here if you like
-
-- id: emnlp-2026
-  kind: conference
-  name: "EMNLP 2026"
-  city: "Budapest"
-  country: "Hungary"
-  flag: "🇭🇺"
-  lat: 47.4979
-  lng: 19.0402
-  dates: "Oct 24–29, 2026"
-  sort: "2026-10-24"
-  items:
-    - title: "Perspectives on Cross-Lingual Consistency in LLMs for Medical Questions"
-      url: "https://arxiv.org/pdf/2609.07687"
-      venue_detail: "EMNLP Main"

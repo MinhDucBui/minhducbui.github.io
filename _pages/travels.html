@@ -49,10 +49,11 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
   .cm-map-wrap {
     position: relative; border-radius: 16px; overflow: hidden;
     border: 1px solid var(--cm-line); box-shadow: 0 8px 28px rgba(31,111,136,0.10);
-    margin-bottom: 2.4em;
+    margin-bottom: 0.7em;
     transform: translateZ(0);   /* Safari: force a compositing layer so the rounded
                                    overflow clip doesn't hide the transformed map tiles */
   }
+  .cm-map-note { margin: 0 0 2.3em; padding-left: 2px; color: var(--cm-muted); font-size: 0.85em; }
   #cm-map { height: 480px; width: 100%; background: #eaf1f4; z-index: 1; border-radius: 16px; }
   /* muted, clean look on top of the (reliable) OpenStreetMap tiles */
   .cm-map-wrap .leaflet-tile-pane { filter: grayscale(0.55) brightness(1.04); }
@@ -124,8 +125,8 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
 {% assign city_list = cities | split: "||" | uniq %}
 
 <p class="cm-intro">
-  Places I've traveled for research — conferences where our papers were accepted, invited talks,
-  and research visits. Each pin is a stop; open it (or a timeline card) to see what was there.
+  Fortunate to have been supported and sponsored to travel for research — conferences,
+  invited talks, and research visits.
 </p>
 
 <div class="cm-summary">
@@ -144,6 +145,7 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
 <div class="cm-map-wrap">
   <div id="cm-map"></div>
 </div>
+<p class="cm-map-note">Each pin is a stop; open it (or a timeline card) to see what was there.</p>
 
 <div class="cm-tl-head">Timeline</div>
 
