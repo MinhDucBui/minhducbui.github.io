@@ -64,10 +64,8 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
   /* Leaflet marker: custom circular pin (uniform) */
   .cm-pin {
     width: 100%; height: 100%; border-radius: 50%;
-    background: var(--cm-accent); border: 2.5px solid #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.35);
-    display: flex; align-items: center; justify-content: center;
-    color: #fff; font-weight: 700; font-size: 12px;
+    background: var(--cm-accent); border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.35);
   }
   .leaflet-popup-content { margin: 11px 13px; font-size: 13px; line-height: 1.45; }
   .cm-pop-city { font-weight: 700; color: var(--cm-accent-dark); font-size: 14px; }
@@ -154,7 +152,7 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
 <ul class="cm-timeline">
 {% assign stops_desc = stops | reverse %}
 {% for s in stops_desc %}
-  {% assign kind_emoji = "🏆" %}{% assign what = s.name %}
+  {% assign kind_emoji = "🎓" %}{% assign what = s.name %}
   {% if s.kind == "talk" %}{% assign kind_emoji = "🎤" %}{% assign what = "Talk" %}
   {% elsif s.kind == "visit" %}{% assign kind_emoji = "🔬" %}{% assign what = "Research Visit" %}{% endif %}
   <li class="cm-node" id="node-{{ s.id }}" data-id="{{ s.id }}">
@@ -172,7 +170,7 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
   const CM_STOPS = {{ site.data.travels | jsonify }};
 
   (function () {
-    const accent = '#2f9fc0', gold = '#e0a615';
+    const gold = '#e0a615';
     const located = CM_STOPS.filter(s => s.lat && s.lng);
 
     const map = L.map('cm-map', { scrollWheelZoom: false, worldCopyJump: true });
@@ -185,18 +183,10 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
       maxZoom: 18
     }).addTo(map);
 
-    /* chronological journey line */
-    const path = located.slice().sort((a, b) => (a.sort > b.sort ? 1 : -1));
-    if (path.length > 1) {
-      L.polyline(path.map(s => [s.lat, s.lng]), {
-        color: accent, weight: 2, opacity: 0.45, dashArray: '5,7'
-      }).addTo(map);
-    }
-
     const markers = {};
     located.forEach(s => {
-      const size = 26;
-      const html = `<div class="cm-pin">${s.items.length}</div>`;
+      const size = 16;
+      const html = '<div class="cm-pin"></div>';
       const icon = L.divIcon({ html, className: 'cm-pin-wrap', iconSize: [size, size], iconAnchor: [size/2, size/2] });
       const m = L.marker([s.lat, s.lng], { icon }).addTo(map);
 
@@ -207,7 +197,7 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
           : `${p.title}`;
         return `<div class="cm-pop-item">${label}${aw}</div>`;
       }).join('');
-      const kindEmoji = s.kind === 'talk' ? '🎤' : (s.kind === 'visit' ? '🔬' : '🏆');
+      const kindEmoji = s.kind === 'talk' ? '🎤' : (s.kind === 'visit' ? '🔬' : '🎓');
       m.bindPopup(
         `<div class="cm-pop-city">${s.flag || ''} ${s.city}, ${s.country}</div>` +
         `<div class="cm-pop-meta">${kindEmoji} ${s.name} · ${s.dates}</div>` +
