@@ -75,47 +75,36 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
   .cm-pop-item { margin: 5px 0; padding-left: 15px; text-indent: -15px; }
   .cm-pop-item a { text-decoration: none; }
 
-  /* --- timeline ----------------------------------------------------- */
-  .cm-tl-head { font-size: 1.35em; font-weight: 700; color: var(--cm-ink); margin: 0.2em 0 1.1em; }
-  .cm-timeline { position: relative; margin: 0; padding: 0 0 0 6px; list-style: none; }
+  /* --- timeline (compact rows) -------------------------------------- */
+  .cm-tl-head { font-size: 1.35em; font-weight: 700; color: var(--cm-ink); margin: 0.2em 0 1em; }
+  .cm-tl-sub { color: var(--cm-muted); font-size: 0.85em; margin: -0.7em 0 1em; }
+  .cm-timeline { position: relative; margin: 0; padding: 0 0 0 4px; list-style: none; }
   .cm-timeline::before {
-    content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px;
+    content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px;
     width: 2px; background: linear-gradient(var(--cm-accent), var(--cm-line));
   }
-  .cm-node { position: relative; padding: 0 0 1.7em 40px; }
+  .cm-node { position: relative; padding: 0 0 0.45em 28px; }
   .cm-node .cm-bullet {
-    position: absolute; left: 0; top: 3px; width: 20px; height: 20px; border-radius: 50%;
-    background: var(--cm-accent); border: 3px solid #fff;
+    position: absolute; left: 0; top: 9px; width: 15px; height: 15px; border-radius: 50%;
+    background: var(--cm-accent); border: 2.5px solid #fff;
     box-shadow: 0 0 0 1.5px var(--cm-line); z-index: 2;
   }
-
-  .cm-card {
-    background: var(--cm-card); border: 1px solid var(--cm-line); border-radius: 14px;
-    padding: 14px 16px; transition: box-shadow .18s ease, border-color .18s ease;
+  .cm-row {
+    display: flex; align-items: baseline; flex-wrap: wrap; gap: 3px 10px;
+    padding: 7px 12px; border-radius: 10px; cursor: pointer;
+    border: 1px solid transparent; transition: background .15s ease, border-color .15s ease;
     scroll-margin-top: 90px;
   }
-  .cm-card:hover { box-shadow: 0 8px 22px rgba(31,111,136,0.12); border-color: #cfe3ea; }
-  .cm-card.flash { border-color: var(--cm-accent); box-shadow: 0 0 0 3px rgba(47,159,192,0.18); }
-
-  .cm-card-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 10px; margin-bottom: 3px; }
-  .cm-conf-name { font-size: 1.08em; font-weight: 700; color: var(--cm-ink); }
-  .cm-date { font-size: 0.8em; color: var(--cm-muted); font-weight: 600; }
-  .cm-loc {
-    display: inline-flex; align-items: center; gap: 5px; cursor: pointer;
-    font-size: 0.9em; color: var(--cm-accent-dark); font-weight: 600; margin-left: auto;
+  .cm-row:hover { background: var(--cm-bg-soft); border-color: var(--cm-line); }
+  .cm-row.flash { border-color: var(--cm-accent); background: #eaf6fb; }
+  .cm-loc { font-weight: 700; color: var(--cm-ink); font-size: 0.98em; }
+  .cm-date { color: var(--cm-muted); font-size: 0.85em; font-weight: 600; }
+  .cm-what {
+    margin-left: auto; font-size: 0.76em; font-weight: 700; white-space: nowrap;
+    color: var(--cm-accent-dark); background: #eaf6fb; border: 1px solid #cfe6ee;
+    border-radius: 999px; padding: 2px 10px;
   }
-  .cm-loc:hover { text-decoration: underline; }
-  .cm-loc .fa { font-size: 0.9em; }
-
-  .cm-papers { list-style: none; margin: 9px 0 0; padding: 0; }
-  .cm-paper { padding: 6px 0; border-top: 1px dashed var(--cm-line); }
-  .cm-paper:first-child { border-top: none; }
-  .cm-paper .body { font-size: 0.92em; line-height: 1.4; }
-  .cm-paper .body a { font-weight: 600; text-decoration: none; color: var(--cm-ink); }
-  .cm-paper .body a:hover { color: var(--cm-accent-dark); text-decoration: underline; }
-  .cm-paper .body .plain { font-weight: 600; color: var(--cm-ink); }
-  .cm-paper .sub { color: var(--cm-muted); font-size: 0.85em; }
-  .cm-award { color: var(--cm-gold); font-weight: 700; font-size: 0.9em; }
+  @media (max-width: 480px) { .cm-what { margin-left: 0; } }
 
   @media (max-width: 560px) {
     #cm-map { height: 360px; }
@@ -161,29 +150,19 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
 
 <div class="cm-tl-head">Timeline</div>
 
+<p class="cm-tl-sub">Newest first. Tap a row to locate it on the map.</p>
 <ul class="cm-timeline">
 {% assign stops_desc = stops | reverse %}
 {% for s in stops_desc %}
-  {% assign kind_emoji = "🏆" %}{% if s.kind == "talk" %}{% assign kind_emoji = "🎤" %}{% elsif s.kind == "visit" %}{% assign kind_emoji = "🔬" %}{% endif %}
+  {% assign kind_emoji = "🏆" %}{% assign what = s.name %}
+  {% if s.kind == "talk" %}{% assign kind_emoji = "🎤" %}{% assign what = "Talk" %}
+  {% elsif s.kind == "visit" %}{% assign kind_emoji = "🔬" %}{% assign what = "Research Visit" %}{% endif %}
   <li class="cm-node" id="node-{{ s.id }}" data-id="{{ s.id }}">
     <span class="cm-bullet"></span>
-    <div class="cm-card" id="card-{{ s.id }}">
-      <div class="cm-card-top">
-        <span class="cm-conf-name">{{ kind_emoji }} {{ s.name }}</span>
-        <span class="cm-date">{{ s.dates }}</span>
-        <span class="cm-loc" data-goto="{{ s.id }}"><i class="fa fa-map-marker"></i>{{ s.flag }} {{ s.city }}, {{ s.country }}</span>
-      </div>
-      <ul class="cm-papers">
-        {% for p in s.items %}
-        <li class="cm-paper">
-          <span class="body">
-            {% if p.url and p.url != "" %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}<span class="plain">{{ p.title }}</span>{% endif %}
-            {% if p.venue_detail %}<div class="sub">{{ p.venue_detail }}</div>{% endif %}
-            {% if p.award %}<div class="cm-award">🏅 {{ p.award }}</div>{% endif %}
-          </span>
-        </li>
-        {% endfor %}
-      </ul>
+    <div class="cm-row" id="card-{{ s.id }}" data-goto="{{ s.id }}">
+      <span class="cm-loc">{{ s.flag }} {{ s.city }}, {{ s.country }}</span>
+      <span class="cm-date">{{ s.dates }}</span>
+      <span class="cm-what">{{ kind_emoji }} {{ what }}</span>
     </div>
   </li>
 {% endfor %}
@@ -197,14 +176,16 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
     const located = CM_STOPS.filter(s => s.lat && s.lng);
 
     const map = L.map('cm-map', { scrollWheelZoom: false, worldCopyJump: true });
-    // OpenStreetMap tiles: no API key, reliable everywhere (incl. Safari), rarely blocked.
-    // A light CSS grayscale filter (see .leaflet-tile-pane) keeps the clean, muted look.
+    /* OpenStreetMap tiles: no API key, reliable everywhere (incl. Safari), rarely blocked.
+       A light CSS grayscale filter (see .leaflet-tile-pane) keeps the clean, muted look.
+       NOTE: only block comments here — Jekyll's compress_html strips newlines in prod,
+       so a // line comment would swallow the rest of the script. */
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       maxZoom: 18
     }).addTo(map);
 
-    // chronological journey line
+    /* chronological journey line */
     const path = located.slice().sort((a, b) => (a.sort > b.sort ? 1 : -1));
     if (path.length > 1) {
       L.polyline(path.map(s => [s.lat, s.lng]), {
@@ -243,8 +224,8 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
       markers[s.id] = m;
     });
 
-    // fit to all points — do it AFTER invalidateSize so the container has its
-    // final size (fitBounds before layout settles zooms into a tiny region).
+    /* fit to all points — do it AFTER invalidateSize so the container has its
+       final size (fitBounds before layout settles zooms into a tiny region). */
     function fitAll() {
       map.invalidateSize();
       if (located.length) {
@@ -258,8 +239,8 @@ hidden: true     # keep out of the human /sitemap/ page and any page loops
     setTimeout(fitAll, 250);
     window.addEventListener('load', fitAll);
 
-    // timeline location click -> fly to marker + open popup
-    document.querySelectorAll('.cm-loc[data-goto]').forEach(el => {
+    /* timeline row click -> fly to marker + open popup */
+    document.querySelectorAll('.cm-row[data-goto]').forEach(el => {
       el.addEventListener('click', () => {
         const id = el.getAttribute('data-goto');
         const m = markers[id];
