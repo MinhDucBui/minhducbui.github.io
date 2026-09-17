@@ -209,6 +209,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  blog:
+    output: true
+    permalink: /blog/:path/
 
 
 # Defaults
@@ -231,6 +234,16 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _blog (hidden old blog posts, reachable only via /blog/)
+  - scope:
+      path: ""
+      type: blog
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      sitemap: false
   # _teaching
   - scope:
       path: ""
