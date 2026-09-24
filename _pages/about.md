@@ -29,7 +29,7 @@ li > blockquote p {
 }
 </style>
 
-Hi, I'm Duc, a PhD student at JGU Mainz (Germany), supervised by **Prof. Katharina von der Wense**. I work on **Human-Centered NLP**, with a focus on **cultural and linguistic diversity**: designing and evaluating language technologies that **prioritize human needs** and consider the ethical and social implications of these systems. I was fortunate to do research visits with **Prof. Anne Lauscher (University of Hamburg)** and **Prof. Diyi Yang (Stanford)**.
+Hi, I'm Duc, a PhD student at JGU Mainz (Germany), supervised by **Prof. Katharina von der Wense**. I work on **Human-Centered NLP**, with a focus on **cultural and linguistic diversity**: designing and evaluating language technologies that **prioritize human needs** and consider the ethical and social implications of these systems. I was fortunate to do research visits with **Prof. Anne Lauscher** (Trustworthy AI Lab, University of Hamburg) and **Prof. Diyi Yang** (SALT Lab, Stanford).
 
 
 Broadly, my research groups into:
