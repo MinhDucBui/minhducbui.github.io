@@ -29,9 +29,10 @@ li > blockquote p {
 }
 </style>
 
+Hi, I'm Duc, a PhD student at JGU Mainz (Germany), supervised by **Prof. Katharina von der Wense**. I work on **Human-Centered NLP**, with a focus on **cultural and linguistic diversity**: designing and evaluating language technologies that **prioritize human needs** and consider the ethical and social implications of these systems. I was fortunate to do research visits with **Prof. Anne Lauscher (University of Hamburg)** and **Prof. Diyi Yang (Stanford)**.
 
-Hi, I'm Duc, a PhD student at JGU Mainz (Germany), supervised by Katharina von der Wense. I work on **AI safety and NLP**: rigorously measuring and mitigating how LLM-based systems encode and amplify **social disparities** rooted in **human diversity**, spanning **cultural and linguistic variation**, across text, vision, and audio. I also study how harms can arise from integrating AI models into real-world pipelines, and how to mitigate them.
 
+Broadly, my research groups into:
 
 - **Cultural Variation:** Measuring and mitigating gaps in model behavior arising from cultural contexts, conventions, and norms
   > - [*Multi3Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models*](https://aclanthology.org/2025.naacl-long.490/) @ *NAACL 2025*
@@ -46,8 +47,6 @@ Hi, I'm Duc, a PhD student at JGU Mainz (Germany), supervised by Katharina von d
 - **Harm Propagation at Deployment Scale:** Measuring and mitigating how integrating models into real-world pipelines creates harm
   > - [*Greater accessibility can amplify discrimination in generative AI*](https://arxiv.org/abs/2603.22260) *(Preprint)*
   > - [*From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation*](https://arxiv.org/abs/2604.21716) @ *ACL 2026 Findings*
-
-Together, these studies reflect my broader research agenda: building the empirical case that socially-encoded disparities in LLM behavior are a safety risk, one that scales with deployment, and developing targeted interventions that reduce them.
 
 
 Latest News ([See all](/news/))
