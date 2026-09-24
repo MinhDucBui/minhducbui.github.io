@@ -34,17 +34,17 @@ Hi, I'm Duc, a PhD student at JGU Mainz (Germany), supervised by **Prof. Kathari
 
 Broadly, my research groups into:
 
-- **Cultural Variation:** Measuring and mitigating gaps in model behavior arising from cultural contexts, conventions, and norms
+- **Cultural Variation:** How models fail people across cultural contexts, conventions, and norms
   > - [*Multi3Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision-Language Models*](https://aclanthology.org/2025.naacl-long.490/) @ *NAACL 2025*
   > - [*Perspectives on Cross-Lingual Consistency in LLMs for Medical Questions*](https://arxiv.org/pdf/2609.07687) @ *EMNLP 2026*
   > - [*On Generalization across Measurement Systems: LLMs Entail More Test-Time Compute for Underrepresented Cultures*](https://aclanthology.org/2025.acl-long.1032/) @ *ACL 2025*
   > - [*Findings of the AmericasNLP 2026 Shared Task on Cultural Image Captioning for Indigenous Languages*](https://aclanthology.org/2026.americasnlp-6.27.pdf) @ *AmericasNLP 2026*
 
-- **Linguistic Variation:**  Measuring and mitigating how social meaning in language variation drives discriminatory model behavior
+- **Linguistic Variation:**  How models disadvantage speakers of different dialects and language varieties
   > - [*Large Language Models Discriminate Against Speakers of German Dialects*](https://arxiv.org/abs/2509.13835) @ *EMNLP 2025*
   > - [*Meenz bleibt Meenz, but Large Language Models Do Not Speak Its Dialect*](https://www.arxiv.org/abs/2602.16852) @ *LREC 2026*
 
-- **Harm Propagation at Deployment Scale:** Measuring and mitigating how integrating models into real-world pipelines creates harm
+- **Deployment & Real-World Harm:** How social harms surface when these systems reach real users
   > - [*Greater accessibility can amplify discrimination in generative AI*](https://arxiv.org/abs/2603.22260) *(Preprint)*
   > - [*From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation*](https://arxiv.org/abs/2604.21716) @ *ACL 2026 Findings*
 
